@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { StudentDetails } from './components/StudentDetails';
 import { LocationDetails } from './components/LocationDetails';
 import { Box, Grid2 as Grid, List, ListItem, ThemeProvider } from '@mui/material';
@@ -23,6 +23,7 @@ function App() {
         <Box>
           <Grid>
             <Routes>
+              <Route path="/" element={<Navigate to="student" />} />
               <Route path="campus" element={<CampusLookup />} />
               <Route path="student" element={<StudentLookup />} />
               <Route path="location" element={<LocationLookup />} />
