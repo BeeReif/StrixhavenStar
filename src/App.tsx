@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { StudentDetails } from './components/StudentDetails';
 import { LocationDetails } from './components/LocationDetails';
 import { Box, Grid2 as Grid, List, ListItem, ThemeProvider } from '@mui/material';
@@ -18,7 +18,7 @@ function App() {
     <ThemeProvider theme={theme}>
 
 
-      <BrowserRouter>
+      <HashRouter>
         <NavBar/>
         <Box>
           <Grid>
@@ -52,7 +52,7 @@ function App() {
             </Routes>
           </Grid>
         </Box>
-      </BrowserRouter>
+      </HashRouter>
 
 
     </ThemeProvider >
