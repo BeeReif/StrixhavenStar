@@ -1,6 +1,6 @@
 # Find the site here:
 
-[Strixhaven Star](https://bmeginne.github.io/StrixhavenStar)
+[Strixhaven Star](https://beereif.github.io/StrixhavenStar)
 
 # Changelog: 
 ## 1.0.0
