@@ -1,4 +1,4 @@
-import { Autocomplete, Container, Grid2 as Grid, TextField, Typography, useMediaQuery } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Container, Grid2 as Grid, TextField, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { STUDENTS } from "../assets/Students";
 import { Club, Job, School, Student } from "../Models";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { CLUBS } from "../assets/Clubs";
 import { getJobByName, JOBS } from "../assets/Jobs";
 import { theme } from "../Theme";
+import { ExpandMore } from "@mui/icons-material";
 
 export function StudentLookup() {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
@@ -32,7 +33,7 @@ export function StudentLookup() {
     })
 
     const filteredJobs = JOBS.reduce(function (acc: Job[], curr: Job) {
-        if (!acc.some((job) => job.name === curr.name) )
+        if (!acc.some((job) => job.name === curr.name))
             acc.push(curr);
         return acc;
     }, []);
@@ -118,55 +119,70 @@ export function StudentLookup() {
                             {"Student Search"}
                         </Typography>
                     </Grid>
-                    <Grid size={{ xs: 6, lg: 2 }}>
-                        <TextField
-                            fullWidth
-                            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                                setName(event.target.value);
-                            }}
-                            label="Name"
-                        />
-                    </Grid>
-                    <Grid size={{ xs: 6, lg: 2 }}>
-                        <Autocomplete
-                            fullWidth
-                            multiple
-                            options={["Lorehold", "Prismari", "Quandrix", "Silverquill", "Witherbloom"] as School[]}
-                            onChange={(_e, school: School[]) => { setSchool(school) }}
-                            renderInput={(params) => <TextField {...params} label="College" />}
-                        />
-                    </Grid>
-                    <Grid size={{ xs: 6, lg: 2 }}>
-                        <Autocomplete
-                            fullWidth
-                            multiple
-                            options={["1st", "2nd", "3rd", "4th"]}
-                            // @ts-expect-error string -> literal
-                            onChange={(_e, year: string[]) => { setYear(year) }}
-                            renderInput={(params) => <TextField {...params} label="Year" />}
-                        />
-                    </Grid>
-                    <Grid size={{ xs: 6, lg: 2 }}>
-                        <Autocomplete
-                            fullWidth
-                            multiple
-                            options={CLUBS}
-                            getOptionLabel={(option) => option.shortName}
-                            onChange={(_e, club: Club[]) => { setClub(club) }}
-                            renderInput={(params) => <TextField {...params} label="Club" />}
-                        />
-                    </Grid>
-                    <Grid size={{ xs: 6, lg: 2 }}>
-                        <Autocomplete
-                            fullWidth
-                            multiple
-                            options={filteredJobs}
-                            getOptionLabel={(option) => option.name}
-                            onChange={(_e, jobs: Job[]) => { handleSetJob(jobs) }}
-                            renderInput={(params) => <TextField {...params} label="Job" />}
-                        />
-                    </Grid>
+                    <Accordion
+                        defaultExpanded={!isMobile}
+                        sx={{ width: "100%" }}
+                    >
+                        <AccordionSummary expandIcon={<ExpandMore />}>
+                            <Typography variant="body1">
+                                Filters
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Grid container size={12} spacing={3}>
+                                <Grid size={{ xs: 6, lg: 2 }}>
+                                    <TextField
+                                        fullWidth
+                                        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                                            setName(event.target.value);
+                                        }}
+                                        label="Name"
+                                    />
+                                </Grid>
 
+
+                                <Grid size={{ xs: 6, lg: 2 }}>
+                                    <Autocomplete
+                                        fullWidth
+                                        multiple
+                                        options={["Lorehold", "Prismari", "Quandrix", "Silverquill", "Witherbloom"] as School[]}
+                                        onChange={(_e, school: School[]) => { setSchool(school) }}
+                                        renderInput={(params) => <TextField {...params} label="College" />}
+                                    />
+                                </Grid>
+                                <Grid size={{ xs: 6, lg: 2 }}>
+                                    <Autocomplete
+                                        fullWidth
+                                        multiple
+                                        options={["1st", "2nd", "3rd", "4th"]}
+                                        // @ts-expect-error string -> literal
+                                        onChange={(_e, year: string[]) => { setYear(year) }}
+                                        renderInput={(params) => <TextField {...params} label="Year" />}
+                                    />
+                                </Grid>
+                                <Grid size={{ xs: 6, lg: 2 }}>
+                                    <Autocomplete
+                                        fullWidth
+                                        multiple
+                                        options={CLUBS}
+                                        getOptionLabel={(option) => option.shortName}
+                                        onChange={(_e, club: Club[]) => { setClub(club) }}
+                                        renderInput={(params) => <TextField {...params} label="Club" />}
+                                    />
+                                </Grid>
+                                <Grid size={{ xs: 6, lg: 2 }}>
+                                    <Autocomplete
+                                        fullWidth
+                                        multiple
+                                        options={filteredJobs}
+                                        getOptionLabel={(option) => option.name}
+                                        onChange={(_e, jobs: Job[]) => { handleSetJob(jobs) }}
+                                        renderInput={(params) => <TextField {...params} label="Job" />}
+                                    />
+                                </Grid>
+                            </Grid>
+                        </AccordionDetails>
+                    </Accordion>
 
 
                 </Grid>
