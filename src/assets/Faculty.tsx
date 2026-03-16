@@ -8,7 +8,15 @@ export const FACULTY: Faculty[] = [
         frequents: [],
         school: "Lorehold",
         classes: [],
-    }
+    },
+    {
+        name: "Johanna Bauer",
+        pronouns: "She/Her",
+        shortName: "Johanna",
+        frequents: [],
+        school: "Prismari",
+        classes: ["Dance"],
+    },
 ]
 
 export function getFacultyByShortName(name: String): Faculty | undefined  {
