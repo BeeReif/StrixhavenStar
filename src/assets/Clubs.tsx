@@ -134,7 +134,7 @@ export function getClubsAtLocation(loc: Location): Club[] {
 export function getClubsByFaculty(faculty: Faculty): Club[] {
     const clubs: Club[] = []
     CLUBS.forEach((club) => {
-        if (club.faculty === faculty.shortName) {
+        if (club.faculty?.includes(faculty.shortName)) {
             clubs.push(club)
         }
     })

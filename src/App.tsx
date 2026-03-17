@@ -1,7 +1,7 @@
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { StudentDetails } from './components/StudentDetails';
 import { LocationDetails } from './components/LocationDetails';
-import { Box, Grid2 as Grid, List, ListItem, ThemeProvider } from '@mui/material';
+import { Box, Grid2 as Grid, ThemeProvider } from '@mui/material';
 import { theme } from './Theme';
 import { ClubDetails } from './components/ClubDetails';
 import { CampusDetails } from './components/CampusDetails';
@@ -11,8 +11,12 @@ import { LocationLookup } from './components/LocationLookup';
 import { ClubLookup } from './components/ClubLookup';
 import { NavBar } from './components/NavBar';
 import { FacultyDetails } from './components/FacultyDetails';
+import { IssuesDetails } from './components/IssuesDetails';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
+
+    const queryClient = new QueryClient()
 
   return (
     <ThemeProvider theme={theme}>
@@ -34,21 +38,10 @@ function App() {
               <Route path="campus/:name" element={<CampusDetails />} />
               <Route path="faculty/:name" element={<FacultyDetails />} />
 
-              <Route path="TODO" element={
-                <List>
-                  <ListItem>
-                    Add 1st Years and Faculty
-                  </ListItem>
-                  <ListItem>
-                    Styling?
-                  </ListItem>
-                  <ListItem>
-                    Get Bios for more students
-                  </ListItem>
-                  <ListItem>
-                    Get frequent hangout locations for more students
-                  </ListItem>
-                </List>
+              <Route path="issues" element={
+                <QueryClientProvider client={queryClient}>
+                <IssuesDetails/>
+                </QueryClientProvider>
               } />
             </Routes>
           </Grid>

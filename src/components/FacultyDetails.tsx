@@ -54,6 +54,9 @@ export function FacultyDetails() {
                                 <Grid size={{ xs: 6, lg: 3 }}>
                                     <List component={Paper}>
                                         <ListItem>
+                                            <ListItemText primary={"Classes"} secondary={Faculty.classes.join(", ")}/>
+                                        </ListItem>
+                                        <ListItem>
                                             <ListItemText primary={"Clubs Sponsored"} secondary={Clubs.map((club, i) => {
                                                 return <><Link to={`/club/${club.shortName}`}>
                                                     {club.shortName}

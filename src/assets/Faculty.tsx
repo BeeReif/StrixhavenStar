@@ -15,7 +15,7 @@ export const FACULTY: Faculty[] = [
         shortName: "Johanna",
         frequents: [],
         school: "Prismari",
-        classes: ["Dance"],
+        classes: [],
     },
 ]
 

@@ -116,8 +116,8 @@ export function NavBar() {
                             <Divider orientation="vertical" flexItem variant='middle' />
                             <Button
                                 component={Link}
-                                to="/TODO"
-                                color="inherit">TODO
+                                to="/issues"
+                                color="inherit">todo
                             </Button>
                             <Divider orientation="vertical" flexItem variant='middle' />
                         </Grid>

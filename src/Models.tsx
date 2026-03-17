@@ -10,7 +10,7 @@ frequents: Location[],
 
 export interface Faculty extends Person {
 school: School,
-classes: string[],
+classes: Class[],
 }
 
 export interface Student extends Person{
@@ -28,7 +28,14 @@ export interface Club {
     name: string,
     shortName: string,
     location?: Location
-    faculty?: string
+    faculty?: string[]
+}
+
+export interface Class {
+    name: string,
+    shortName: string,
+    location: Location,
+    period: string,    
 }
 
 export class Location {
