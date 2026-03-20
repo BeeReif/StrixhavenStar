@@ -18,6 +18,7 @@ school: School,
 year: "1st" | "2nd" | "3rd" | "4th",
 clubs: Club[],
 jobs: Job[],
+classes: Class[],
 roommates: string[]
 freshRoomies?: string[]
 image?: string

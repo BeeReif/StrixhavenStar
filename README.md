@@ -3,6 +3,8 @@
 [Strixhaven Star](https://beereif.github.io/StrixhavenStar)
 
 # Changelog: 
+## 1.1.1
+- Add contribution info to TODO
 ## 1.1.0
 - Update TODO to integrate GitHub Issues
 - Behind the scenes structure updates
