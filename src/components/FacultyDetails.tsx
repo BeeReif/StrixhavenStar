@@ -27,31 +27,33 @@ export function FacultyDetails() {
                 {Faculty ?
                     <>
                         <Grid container size={12}>
-                            <Grid size={{ xs: 10, sm: "auto" }}>
+                            <Grid size={"grow"}>
                                 <Grid container alignItems={"center"}>
-                                <Typography variant="h4" flexGrow={0} flexShrink={1}>
-                                    {Faculty?.name} ({Faculty.pronouns})
-                                </Typography>
-                                {
-                                logo ?
-                                    <Grid size={{ xs: 2 }} container alignContent={"baseline"}>
-                                        <Box
-                                            width={50}
-                                            height={50}
-                                            component="img"
-                                            src={logo}
-                                            alt={Faculty.name}
-                                            marginTop={0}
-                                            alignItems={'top'}
-                                        />
+                                    <Grid size={{ xs: 10, sm: "auto" }}>
+                                        <Typography variant="h4" flexGrow={0} flexShrink={1}>
+                                            {Faculty?.name} ({Faculty.pronouns})
+                                        </Typography>
                                     </Grid>
-                                    : null
-                            }
+                                    {
+                                        logo ?
+                                            <Grid size={{ xs: 2 }} container alignContent={"baseline"}>
+                                                <Box
+                                                    width={50}
+                                                    height={50}
+                                                    component="img"
+                                                    src={logo}
+                                                    alt={Faculty.name}
+                                                    marginTop={0}
+                                                    alignItems={'top'}
+                                                />
+                                            </Grid>
+                                            : null
+                                    }
                                 </Grid>
                                 <Grid>
-                                <Typography variant="h5">
-                                    <Link to={`/campus/${Faculty.school}`}>{Faculty.school} </Link>{Faculty?.title}
-                                </Typography>
+                                    <Typography variant="h5">
+                                        <Link to={`/campus/${Faculty.school}`}>{Faculty.school} </Link>{Faculty?.title}
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -74,7 +76,7 @@ export function FacultyDetails() {
                                 <Grid size={{ xs: 6, lg: 3 }}>
                                     <List component={Paper}>
                                         <ListItem>
-                                            <ListItemText primary={"Classes"} secondary={Faculty.classes.join(", ")}/>
+                                            <ListItemText primary={"Classes"} secondary={Faculty.classes.join(", ")} />
                                         </ListItem>
                                         <ListItem>
                                             <ListItemText primary={"Clubs Sponsored"} secondary={Clubs.map((club, i) => {
