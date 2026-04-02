@@ -1,7 +1,7 @@
 import { Container, Grid2 as Grid, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { getMembersByClub, } from "../assets/Students";
-import { Student } from "../Models";
+import { Location, Student } from "../Models";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { CLUBS } from "../assets/Clubs";
@@ -33,7 +33,8 @@ export function ClubLookup() {
             renderCell: (params: GridPreProcessEditCellProps) => {
                 return <Link to={`/club/${params.row.name.shortName}`}>
                     {params.row.name.name}</Link>
-            }
+            },
+            sortComparator: (a: {name: string}, b: {name: string}) => a.name.localeCompare(b.name)
         },
         {
             field: 'location', headerName: 'Location', minWidth: isMobile ? 100 : 150,
@@ -44,7 +45,8 @@ export function ClubLookup() {
                     : <Link to={`/location/${params.row.location.shortName}`}>
                         {params.row.location.shortName}</Link>
                 }</>
-            }
+            },
+            sortComparator: (a: Location, b: Location) => a.name.localeCompare(b.name)
         },
         {
             field: 'members', headerName: 'Members', minWidth: 500,

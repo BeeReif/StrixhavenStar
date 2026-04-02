@@ -36,7 +36,8 @@ export function LocationLookup() {
             renderCell: (params: GridPreProcessEditCellProps) => {
                 return <Link to={`/location/${params.row.name.shortName}`}>
                     {params.row.name.name}</Link>
-            }
+            },
+            sortComparator: (a: {name: string}, b: {name: string}) => a.name.localeCompare(b.name)
         },
         {
             field: 'campus', headerName: 'Campus', minWidth: 100,
