@@ -76,7 +76,12 @@ export function FacultyDetails() {
                                 <Grid size={{ xs: 6, lg: 3 }}>
                                     <List component={Paper}>
                                         <ListItem>
-                                            <ListItemText primary={"Classes"} secondary={Faculty.classes.join(", ")} />
+                                            <ListItemText primary={"Classes"} secondary={Faculty.classes.map((cls, i) => {
+                                                return <><Link to={`/class/${cls.shortName}`}>
+                                                    {cls.shortName}
+                                                </Link>{i < Faculty.classes.length - 1 ? ", " : ""}
+                                                </>
+                                            })} />
                                         </ListItem>
                                         <ListItem>
                                             <ListItemText primary={"Clubs Sponsored"} secondary={Clubs.map((club, i) => {
@@ -115,7 +120,7 @@ export function FacultyDetails() {
                         </Grid>
                     </>
                     : <Alert severity="warning">
-                        {name} does not attend Strixhaven
+                        {name} does not work at Strixhaven
                     </Alert>
                 }</Grid>
         </Container>

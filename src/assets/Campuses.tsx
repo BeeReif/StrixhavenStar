@@ -1,4 +1,4 @@
-import { Campus } from "../Models";
+import { Campus } from "./Models";
 
 export const CENTRAL: Campus = {
     name: "Central",

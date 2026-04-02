@@ -1,6 +1,6 @@
 import { Container, Grid2 as Grid, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
-import { Club } from "../Models";
+import { Class, Club } from "../assets/Models";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getClubsByFaculty } from "../assets/Clubs";
@@ -22,7 +22,7 @@ export function FacultyLookup() {
             name: { name: prof.name, shortName: prof.shortName },
             school: prof.school,
             clubs: getClubsByFaculty(prof),
-            classes: []
+            classes: prof.classes
         }
     })
 
@@ -47,14 +47,14 @@ export function FacultyLookup() {
         },
         {
             field: 'classes', headerName: 'Classes', minWidth: isMobile ? 350 : 500,
-            valueGetter: (params: Club[]) => {
-                return params.flatMap((club) => club.shortName).join(", ")
+            valueGetter: (params: Class[]) => {
+                return params.flatMap((cls) => cls.shortName).join(", ")
             },
             //@ts-expect-error ReactNode and JSX.Element confusion 
             renderCell: (params: GridPreProcessEditCellProps) => {
-                return <>{params.row.clubs.map((club: Club, i: number) => {
-                    return <><Link to={`/class/${club.shortName}`}>
-                        {club.shortName}
+                return <>{params.row.classes.map((cls: Class, i: number) => {
+                    return <><Link to={`/class/${cls.shortName}`}>
+                        {cls.shortName}
                     </Link>{i < params.row.clubs.length - 1 ? ", " : ""}
                     </>
                 })}

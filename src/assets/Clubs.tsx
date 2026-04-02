@@ -1,4 +1,4 @@
-import { Club, Faculty, Location } from "../Models";
+import { Club, Faculty, Location } from "./Models";
 import { BIBLIOPLEX, BLISS_HALL, COMMONS, CULTIVARIUM, DORMS_SILV, DRAGONSBREATH, GUARDIAN_HALL, MARIONNETTE_HALL, SANCTUARY, STADIUM, WHITERAVEN } from "./Locations";
 
 export const BOOK_CLUB: Club = {
@@ -82,7 +82,7 @@ export const STAR: Club = {
 
 export const FAITH: Club = {
     name: "The Student-Mages of Faith",
-    shortName: "Faith",
+    shortName: "Mages of Faith",
     location: COMMONS
 }
 

@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Container, Grid2 as Grid, TextField, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { STUDENTS } from "../assets/Students";
-import { Club, Job, School, Student } from "../Models";
+import { Club, Job, School, Student } from "../assets/Models";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CLUBS } from "../assets/Clubs";

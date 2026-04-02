@@ -12,6 +12,7 @@ import Prismari from "../assets/images/places/CampusPrismari.png"
 import Quandrix from "../assets/images/places/CampusQuandrix.png"
 import Silverquill from "../assets/images/places/CampusSilverquill.png"
 import Witherbloom from "../assets/images/places/CampusWitherbloom.png"
+import { getFacultyBySchool } from "../assets/Faculty";
 
 
 export function CampusDetails() {
@@ -104,6 +105,15 @@ export function CampusDetails() {
                                 <ListItem>
                                     <ListItemText primary="Dichotomy" secondary={Campus.dichotomy} />
                                 </ListItem>
+                                <ListItem>
+                                    <ListItemText primary={"Faculty"} secondary={getFacultyBySchool(Campus.name).map((prof, i) => {
+                                        return <>
+                                            <Link to={`/faculty/${prof.shortName}`}>
+                                                {prof.shortName}
+                                            </Link>, {prof.title}{i < getFacultyBySchool(Campus.name).length - 1 ? "; " : ""}
+                                        </>
+                                    })} />
+                                </ListItem>
                             </List>
                         </Grid>
                     }
@@ -118,42 +128,45 @@ export function CampusDetails() {
                                     </>
                                 })} />
                             </ListItem>
-                            <ListItem>
-                                <ListItemText primary={"4th Years"} secondary={getStudentsBySchool(Campus.name, "4th").map((student, i) => {
-                                    return <>
-                                        <Link to={`/student/${student.shortName}`}>
-                                            {student.shortName}
-                                        </Link>{i < getStudentsBySchool(Campus.name, "4th").length - 1 ? ", " : ""}
-                                    </>
-                                })} />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText primary={"3rd Years"} secondary={getStudentsBySchool(Campus.name, "3rd").map((student, i) => {
-                                    return <>
-                                        <Link to={`/student/${student.shortName}`}>
-                                            {student.shortName}
-                                        </Link>{i < getStudentsBySchool(Campus.name, "3rd").length - 1 ? ", " : ""}
-                                    </>
-                                })} />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText primary={"2nd Years"} secondary={getStudentsBySchool(Campus.name, "2nd").map((student, i) => {
-                                    return <>
-                                        <Link to={`/student/${student.shortName}`}>
-                                            {student.shortName}
-                                        </Link>{i < getStudentsBySchool(Campus.name, "2nd").length - 1 ? ", " : ""}
-                                    </>
-                                })} />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText primary={"Prospectives"} secondary={getStudentsBySchool(Campus.name, "1st").map((student, i) => {
-                                    return <>
-                                        <Link to={`/student/${student.shortName}`}>
-                                            {student.shortName}
-                                        </Link>{i < getStudentsBySchool(Campus.name, "1st").length - 1 ? ", " : ""}
-                                    </>
-                                })} />
-                            </ListItem>
+                            {Campus.name !== "Central" &&
+                                <>
+                                    <ListItem>
+                                        <ListItemText primary={"4th Years"} secondary={getStudentsBySchool(Campus.name, "4th").map((student, i) => {
+                                            return <>
+                                                <Link to={`/student/${student.shortName}`}>
+                                                    {student.shortName}
+                                                </Link>{i < getStudentsBySchool(Campus.name, "4th").length - 1 ? ", " : ""}
+                                            </>
+                                        })} />
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListItemText primary={"3rd Years"} secondary={getStudentsBySchool(Campus.name, "3rd").map((student, i) => {
+                                            return <>
+                                                <Link to={`/student/${student.shortName}`}>
+                                                    {student.shortName}
+                                                </Link>{i < getStudentsBySchool(Campus.name, "3rd").length - 1 ? ", " : ""}
+                                            </>
+                                        })} />
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListItemText primary={"2nd Years"} secondary={getStudentsBySchool(Campus.name, "2nd").map((student, i) => {
+                                            return <>
+                                                <Link to={`/student/${student.shortName}`}>
+                                                    {student.shortName}
+                                                </Link>{i < getStudentsBySchool(Campus.name, "2nd").length - 1 ? ", " : ""}
+                                            </>
+                                        })} />
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListItemText primary={"Prospectives"} secondary={getStudentsBySchool(Campus.name, "1st").map((student, i) => {
+                                            return <>
+                                                <Link to={`/student/${student.shortName}`}>
+                                                    {student.shortName}
+                                                </Link>{i < getStudentsBySchool(Campus.name, "1st").length - 1 ? ", " : ""}
+                                            </>
+                                        })} />
+                                    </ListItem>
+                                </>}
                         </List>
                     </Grid>
                     {Campus.name !== "Central" &&

@@ -7,7 +7,8 @@ import { getLocationByShortName, LOCATIONS } from "../assets/Locations";
 import { theme } from "../Theme";
 import { useState } from "react";
 import Strixhaven from "../assets/images/Strix.png"
-import { FACULTY } from "../assets/Faculty";
+import { FACULTY, getFacultyByShortName } from "../assets/Faculty";
+import { CLASSES, getClassByShortName } from "../assets/Classes";
 
 export function NavBar() {
 
@@ -28,6 +29,7 @@ export function NavBar() {
         .concat(STUDENTS.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
         .concat(LOCATIONS.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
         .concat(FACULTY.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
+        .concat(CLASSES.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
         .concat([
             { name: "Central", shortName: "Central" },
             { name: "Lorehold", shortName: "Lorehold" },
@@ -49,6 +51,10 @@ export function NavBar() {
             nav(`/club/${search.shortName}`)
         } else if (getLocationByShortName(search.shortName)) {
             nav(`/location/${search.shortName}`)
+        } else if (getFacultyByShortName(search.shortName)) {
+            nav(`/faculty/${search.shortName}`)
+        } else if (getClassByShortName(search.shortName)) {
+            nav(`/class/${search.shortName}`)
         } else {
             nav(`/campus/${search.shortName}`)
         }
@@ -79,6 +85,7 @@ export function NavBar() {
                         <MenuItem onClick={handleClose} component={Link} to="/student">Students</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/location">Locations</MenuItem>
+                        {/* <MenuItem onClick={handleClose} component={Link} to="/class">Classes</MenuItem> */}
                         <MenuItem onClick={handleClose} component={Link} to="/club">Clubs</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/TODO">TODO</MenuItem>
                     </Menu>
@@ -115,6 +122,12 @@ export function NavBar() {
                                 to="/location"
                                 color="inherit">Locations
                             </Button>
+                            {/* <Divider orientation="vertical" flexItem variant='middle' />
+                            <Button
+                                component={Link}
+                                to="/class"
+                                color="inherit">Classes
+                            </Button> */}
                             <Divider orientation="vertical" flexItem variant='middle' />
                             <Button
                                 component={Link}

@@ -1,7 +1,7 @@
 import { Container, Grid2 as Grid, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { getStudentsBySchool, } from "../assets/Students";
-import { Location,  Student } from "../Models";
+import { Location,  Student } from "../assets/Models";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getLocationsByCampus } from "../assets/Locations";

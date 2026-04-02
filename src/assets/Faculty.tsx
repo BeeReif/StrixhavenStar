@@ -1,4 +1,4 @@
-import { Faculty } from "../Models";
+import { Class, Faculty, School } from "./Models";
 import Mara from "../assets/images/people/Mara.png"
 import Rathal from "../assets/images/people/Rathal.png"
 import Maddox from "../assets/images/people/Maddox.png"
@@ -115,4 +115,18 @@ export const FACULTY: Faculty[] = [
 
 export function getFacultyByShortName(name: String): Faculty | undefined  {
     return FACULTY.find((faculty) => faculty.shortName === name)
+}
+
+export function getFacultyBySchool(school: School | "Central"): Faculty[] {
+    const staff: Faculty[] = []
+    FACULTY.forEach((faculty) => {
+        if (faculty.school === school) {
+            staff.push(faculty)
+        }
+    }) 
+    return staff.sort((a,b) => a.name.localeCompare(b.name)).sort((a,b) => a.title[0].localeCompare(b.title[0]))
+}
+
+export function getTeacherByClass(cls: Class): Faculty | undefined  {
+    return FACULTY.find((faculty) => faculty.classes.includes(cls))
 }

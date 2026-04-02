@@ -1,17 +1,16 @@
 import { Container, Grid2 as Grid, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
-import { getEmployeesByJob, getRegularsByLocation, } from "../assets/Students";
-import { Club,  Student } from "../assets/Models";
+import { getStudentsByClass, } from "../assets/Students";
+import { Location, Student } from "../assets/Models";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { LOCATIONS } from "../assets/Locations";
-import { getJobsAtLocation } from "../assets/Jobs";
-import { getClubsAtLocation } from "../assets/Clubs";
 import { theme } from "../Theme";
+import { CLASSES } from "../assets/Classes";
+import { getTeacherByClass } from "../assets/Faculty";
 
-export function LocationLookup() {
+export function ClassLookup() {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
+    
     useEffect(() => {
         apiRef.current?.autosizeColumns({ includeHeaders: true })
     })
@@ -19,83 +18,64 @@ export function LocationLookup() {
     const paginationModel = { page: 0, pageSize: isMobile ? 100 : 10 };
     const apiRef = useGridApiRef()
 
-    const rows = LOCATIONS.map((loc) => {
+    const rows = CLASSES.map((cls) => {
         return {
-            name: {name: loc.name, shortName: loc.shortName},
-            campus: loc.campus,
-            employees: getJobsAtLocation(loc).flatMap((job) => getEmployeesByJob(job)),
-            clubs: getClubsAtLocation(loc),
-            regulars: getRegularsByLocation(loc)
+            name: {name: cls.name, shortName: cls.shortName},
+            faculty: getTeacherByClass(cls),
+            location: cls.location,
+            period: cls.period,
+            students: getStudentsByClass(cls),
         }
     })
 
     const columns: GridColDef[] = [
         {
-            field: 'name', headerName: 'Name', minWidth: 150,
+            field: 'name', headerName: 'Name', minWidth: 300,
             //@ts-expect-error ReactNode and JSX.Element confusion 
             renderCell: (params: GridPreProcessEditCellProps) => {
-                return <Link to={`/location/${params.row.name.shortName}`}>
+                return <Link to={`/club/${params.row.name.shortName}`}>
                     {params.row.name.name}</Link>
             },
             sortComparator: (a: {name: string}, b: {name: string}) => a.name.localeCompare(b.name)
         },
         {
-            field: 'campus', headerName: 'Campus', minWidth: 100,
+            field: 'faculty', headerName: 'Teacher', minWidth: 300,
             //@ts-expect-error ReactNode and JSX.Element confusion 
             renderCell: (params: GridPreProcessEditCellProps) => {
-                return <Link to={`/campus/${params.row.campus}`}>
-                    {params.row.campus}</Link>
-            }
+                return <Link to={`/faculty/${params.row.faculty.shortName}`}>
+                    {params.row.faculty.name}</Link>
+            },
+            sortComparator: (a: {name: string}, b: {name: string}) => a.name.localeCompare(b.name)
         },
         {
-            field: 'employees', headerName: 'Employees', minWidth: isMobile ? 150 : 200,
+            field: 'location', headerName: 'Location', minWidth: isMobile ? 100 : 150,
+            //@ts-expect-error ReactNode and JSX.Element confusion 
+            renderCell: (params: GridPreProcessEditCellProps) => {
+                return <>{!params.row.location 
+                    ? params.row.location
+                    : <Link to={`/location/${params.row.location.shortName}`}>
+                        {params.row.location.shortName}</Link>
+                }</>
+            },
+            sortComparator: (a: Location, b: Location) => a.name.localeCompare(b.name)
+        },
+        { field: "period", headerName: "Period", minWidth: isMobile ? 50 : 150 },
+        {
+            field: 'students', headerName: 'Students', minWidth: 500,
             valueGetter: (params: Student[]) => {
                 return params.flatMap((student: Student) => student.shortName).join(", ")
             },
             //@ts-expect-error ReactNode and JSX.Element confusion 
             renderCell: (params: GridPreProcessEditCellProps) => {
-                return <>{params.row.employees.map((student: Student, i: number) => {
+                return <>{params.row.students.map((student: Student, i: number) => {
                     return <><Link to={`/student/${student.shortName}`}>
                         {student.shortName}
-                    </Link>{i < params.row.employees.length - 1 ? ", " : ""}
+                    </Link>{i < params.row.students.length - 1 ? ", " : ""}
                     </>
                 })}
                 </>
             }
         },
-        {
-            field: 'regulars', headerName: 'Regulars', minWidth: isMobile ? 200 : 350,
-            valueGetter: (params: Student[]) => {
-                return params.flatMap((student: Student) => student.shortName).join(", ")
-            },
-            //@ts-expect-error ReactNode and JSX.Element confusion 
-            renderCell: (params: GridPreProcessEditCellProps) => {
-                return <>{params.row.regulars.map((student: Student, i: number) => {
-                    return <><Link to={`/student/${student.shortName}`}>
-                        {student.shortName}
-                    </Link>{i < params.row.regulars.length - 1 ? ", " : ""}
-                    </>
-                })}
-                </>
-            }
-        },
-        {
-            field: 'clubs', headerName: 'Clubs', minWidth: 550,
-            valueGetter: (params: Club[]) => {
-                return params.flatMap((club: Club) => club.shortName).join(", ")
-            },
-            //@ts-expect-error ReactNode and JSX.Element confusion 
-            renderCell: (params: GridPreProcessEditCellProps) => {
-                return <>{params.row.clubs.map((club: Club, i: number) => {
-                    return <><Link to={`/club/${club.shortName}`}>
-                        {club.shortName}
-                    </Link>{i < params.row.clubs.length - 1 ? ", " : ""}
-                    </>
-                })}
-                </>
-            }
-        },
-        
     ]
     return (
 
@@ -106,11 +86,11 @@ export function LocationLookup() {
                         {"Strixhaven Star"}
                     </Typography>
                 </Grid>
-                    <Grid size={12}>
-                        <Typography variant="h5" flexGrow={1}>
-                            {"Locations"}
-                        </Typography>
-                    </Grid>
+                <Grid size={12}>
+                    <Typography variant="h5" flexGrow={1}>
+                        {"Clubs"}
+                    </Typography>
+                </Grid>
                 <Grid size={12}>
                     <DataGrid
                         density={isMobile ? "compact" : "standard"}
@@ -121,7 +101,7 @@ export function LocationLookup() {
                         getRowId={(row) => { return row.name.name }}
                         initialState={{
                             pagination: { paginationModel }, sorting: {
-                                sortModel: [{ field: 'campus', sort: 'asc' }],
+                                sortModel: [{ field: 'name', sort: 'asc' }],
                             }
                         }}
                         hideFooterPagination={isMobile}

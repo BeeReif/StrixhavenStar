@@ -14,6 +14,8 @@ import { FacultyDetails } from './components/FacultyDetails';
 import { IssuesDetails } from './components/IssuesDetails';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FacultyLookup } from './components/FacultyLookup';
+import { ClassDetails } from './components/ClassDetails';
+import { ClassLookup } from './components/ClassLookup';
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
               <Route path="campus/:name" element={<CampusDetails />} />
               <Route path="faculty" element={<FacultyLookup />} />
               <Route path="faculty/:name" element={<FacultyDetails />} />
+              <Route path="class/" element={<ClassLookup/>} />
+              <Route path="class/:name" element={<ClassDetails />} />
 
               <Route path="issues" element={
                 <QueryClientProvider client={queryClient}>

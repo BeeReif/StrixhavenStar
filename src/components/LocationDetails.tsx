@@ -4,7 +4,8 @@ import { BIOS } from "../assets/Biographies";
 import { getLocationByShortName } from "../assets/Locations";
 import { getJobsAtLocation } from "../assets/Jobs";
 import { getClubsAtLocation } from "../assets/Clubs";
-import { getEmployeesByJob, getMembersByClub, getRegularsByLocation } from "../assets/Students";
+import { getEmployeesByJob, getMembersByClub, getRegularsByLocation, getStudentsByClass } from "../assets/Students";
+import { getClassesAtLocation } from "../assets/Classes";
 
 export function LocationDetails() {
 
@@ -14,6 +15,7 @@ export function LocationDetails() {
 
     const Jobs = getJobsAtLocation(Location!)
     const Clubs = getClubsAtLocation(Location!)
+    const Classes = getClassesAtLocation(Location!)
     const Regulars = getRegularsByLocation(Location!)
     return (
 
@@ -53,6 +55,19 @@ export function LocationDetails() {
                                             </>
                                         }
                                         )} />
+                                    </ListItem>
+                                })
+                            }
+                            {
+                                Classes.map((cls) => {
+                                    return <ListItem>
+                                        <ListItemText primary={cls.name} secondary={getStudentsByClass(cls).map((student, i) => {
+                                            return <>
+                                                <Link to={`/student/${student.shortName}`}>
+                                                    {student.shortName}
+                                                </Link>{i < getStudentsByClass(cls).length - 1 ? ", " : ""}
+                                            </>
+                                        })} />
                                     </ListItem>
                                 })
                             }

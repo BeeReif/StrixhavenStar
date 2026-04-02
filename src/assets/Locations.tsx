@@ -1,4 +1,4 @@
-import { Location, School } from "../Models";
+import { Location, School } from "./Models";
 import Arithmo from "./images/places/Arithmo.png"
 import Biblioplex from "./images/places/Biblioplex.png"
 import Bog from "./images/places/Bog.png"

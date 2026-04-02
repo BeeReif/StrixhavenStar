@@ -1,4 +1,4 @@
-import { Club, Job, Location, School, Student } from "../Models"
+import { Class, Club, Job, Location, School, Student } from "./Models"
 import { BOOK_CLUB, CHEER, DEAD_LANGUAGES, DEBATE, DRAGONCHESS, ENTREPRENEURS, FAITH, FINE_ARTS, HORTICULTURE, LIFTERS, MAGE_TOWER, PARTY, BAND, SILKBALL, SPARRING, STAR } from "./Clubs"
 import { BARISTA, GROUNDS_DRAG, GROUNDS_FENS, LABS, LIBRARIAN, RA_LORE, RA_PRIS, RA_QUAN, RA_SILV, RA_WITH, WAITER } from "./Jobs"
 import { ARITHMODROME, BIBLIOPLEX, BLISS_HALL, BOG, CAFE, COMMONS, CONSULARIUM, CULTIVARIUM, DORMS_COMMON, DRAGONSBREATH, FENS, PILLARDROP, ROSE_STAGE, STADIUM, TAVERN, WHITERAVEN } from "./Locations"
@@ -731,4 +731,14 @@ export function getStudentsBySchool(school: School | "Central", year?: "1st" |"2
         }
     }) 
     return students.sort((a,b) => a.name.localeCompare(b.name))
+}
+
+export function getStudentsByClass(cls: Class, except?: Student[]): Student[] {
+    const students: Student[] = []
+    STUDENTS.forEach((student) => {
+        if (student.classes?.includes(cls) && (!except || !except.includes(student))) {
+            students.push(student)
+        }
+    }) 
+    return students.sort((a,b) => a.shortName.localeCompare(b.shortName))
 }

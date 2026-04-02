@@ -1,4 +1,4 @@
-import { Job, Location } from "../Models";
+import { Job, Location } from "./Models";
 import { BIBLIOPLEX, CAFE, COMMONS, DORMS_COMMON, DORMS_LORE, DORMS_PRIS, DORMS_QUAN, DORMS_SILV, DORMS_WITH, DRAGONSBREATH, FENS, ROSE_STAGE, STADIUM, TAVERN } from "./Locations";
 
 export const LIBRARIAN: Job = new Job(
