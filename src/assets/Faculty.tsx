@@ -124,7 +124,16 @@ export function getFacultyBySchool(school: School | "Central"): Faculty[] {
             staff.push(faculty)
         }
     }) 
-    return staff.sort((a,b) => a.name.localeCompare(b.name)).sort((a,b) => a.title[0].localeCompare(b.title[0]))
+    return staff.sort((a,b) => a.name.localeCompare(b.name)).sort((a,b) => {
+        const aIsDean = a.title.startsWith("Dean")
+        const bIsDean = b.title.startsWith("Dean")
+
+        if (aIsDean && !bIsDean)
+            return -1
+        else if (bIsDean && !aIsDean)
+            return 1
+        else return 0
+    })
 }
 
 export function getTeacherByClass(cls: Class): Faculty | undefined  {
