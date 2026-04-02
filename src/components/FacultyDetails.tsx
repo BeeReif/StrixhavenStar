@@ -26,18 +26,15 @@ export function FacultyDetails() {
             <Grid container spacing={3}>
                 {Faculty ?
                     <>
-                        <Grid container size={12} alignItems={"flex-start"}>
+                        <Grid container size={12}>
                             <Grid size={{ xs: 10, sm: "auto" }}>
-                                <Typography variant="h4">
+                                <Grid container alignItems={"center"}>
+                                <Typography variant="h4" flexGrow={0} flexShrink={1}>
                                     {Faculty?.name} ({Faculty.pronouns})
                                 </Typography>
-                                <Typography variant="h5">
-                                    {Faculty?.title}
-                                </Typography>
-                            </Grid>
-                            {
+                                {
                                 logo ?
-                                    <Grid size={{ xs: 2 }}>
+                                    <Grid size={{ xs: 2 }} container alignContent={"baseline"}>
                                         <Box
                                             width={50}
                                             height={50}
@@ -50,6 +47,13 @@ export function FacultyDetails() {
                                     </Grid>
                                     : null
                             }
+                                </Grid>
+                                <Grid>
+                                <Typography variant="h5">
+                                    <Link to={`/campus/${Faculty.school}`}>{Faculty.school} </Link>{Faculty?.title}
+                                </Typography>
+                                </Grid>
+                            </Grid>
                         </Grid>
                         {
                             Faculty.image ? <Grid>

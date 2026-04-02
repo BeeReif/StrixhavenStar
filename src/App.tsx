@@ -25,7 +25,7 @@ function App() {
 
       <HashRouter>
         <NavBar/>
-        <Box>
+        <Box sx={{overscrollBehavior: "none"}}>
           <Grid>
             <Routes>
               <Route path="/" element={<Navigate to="student" />} />

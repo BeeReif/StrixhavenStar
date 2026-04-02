@@ -2,7 +2,11 @@
 
 [Strixhaven Star](https://beereif.github.io/StrixhavenStar)
 
-# Changelog: 
+# Changelog:
+## 1.2.0
+- Add initial Faculty
+- Fix some UI quirks
+- Fix sorting on some tables 
 ## 1.1.1
 - Add contribution info to TODO
 ## 1.1.0

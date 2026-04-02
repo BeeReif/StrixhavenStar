@@ -641,18 +641,24 @@ export const BIOS = new Map<String, String>([
         "Mara", `Mara is a very kindhearted woman, patient in the classroom and---as her title suggests, very orderly! She has, `+
         `in previous times, worked as an archivist, preserving the histories of countless nations, serving as a voice and a preservationist `+
         `of many cultures that she's held dear to her heart. As a mage, she has mastered the art of careful creation---exemplified the most by `+
-        `the existence of a companion of hers that we will get into in just a bit.`
+        `the existence of a certain companion of hers.`
     ],
     [
         "Rathal", `The exemplification of certain skills of Mara's, Rathal appears to be an elven woman, gruff, strong, and athletic---a true protector, `+
-        `but the truth of the matter is that she is a warforged, created a long while ago by mara to serve as protection and as a companion during her travels, `+
-        `and the two of them are very close! they joined strixhaven's faculty as a bonded pair and still remain in close proximity---although Rathal has her own `+
+        `but the truth of the matter is that she is a warforged, created a long while ago by Mara to serve as protection and as a companion during her travels, `+
+        `and the two of them are very close! they joined Strixhaven's faculty as a bonded pair and still remain in close proximity---although Rathal has her own `+
         `responsibilities in terms of classes, just as Mara has hers, and Rathal has found some level of fulfillment in coaching many of strixhaven's intramural `+
         `sports, she is happiest when she is at Mara's side.`
     ],
     [
+        "Maddox", `Maddox has not always looked like this. Students returning from summer will find the creature leading their lecture is going to appear a bit `+
+        `differently than they're used to or have expected...but this is part of his charm, he assures you. As Lorehold's dean of chaos---he has a certain eccentric `+
+        `flair to him with which he leads all of his endeavors, he pursues what interests him and lets his heart guide him to what he believes is truly important---the people, `+
+        `behind all the markers of grand conflicts and eras long past, and the reasons they have chosen to do what they do .`
+    ],
+    [
         "Fiamma", `Fiamma began her life and studies in the realms of belief and religion, but is openly disillusioned with the ways that...certain faculty members `+
-        `on campus approach their beliefs these days. instead, she prefers to look at things through the rational lens of history, although there is a certain level `+
+        `on campus approach their beliefs these days. Instead, she prefers to look at things through the rational lens of history, although there is a certain level `+
         `of fascination and comfort she takes in the true free will of "humanity" that draws her toward the perspective of chaos, the perspective that characterizes `+
         `people as individuals, driven by emotion, faith, and their brotherhood with others. She is a satyr, she does hail from the feywild, she practices what she `+
         `calls the old faith, and a particular niche of her interests has to do with the history of the feywild's courts and politics---those histories that she has `+

@@ -93,7 +93,7 @@ export const STUDENTS: Student[] = [
         year: "4th",
         school: "Witherbloom",
         jobs: [],
-        clubs: [SPARRING, SILKBALL].sort((a,b) => {return a.name.localeCompare(b.name)}),
+        clubs: [SPARRING, SILKBALL, FAITH].sort((a,b) => {return a.name.localeCompare(b.name)}),
         frequents: [BOG,BLISS_HALL,CULTIVARIUM, WHITERAVEN, CONSULARIUM].sort((a,b) => {return a.name.localeCompare(b.name)}),
         roommates: ["Farren"],
         freshRoomies: ["Zoey"].sort(),
@@ -413,7 +413,8 @@ export const STUDENTS: Student[] = [
         frequents: [FENS, BOG, CULTIVARIUM].sort((a,b) => {return a.name.localeCompare(b.name)}),
         freshRoomies: ["Worth", "Brilliance"].sort(),
         roommates: ["Hennie", "Elowen"],
-        image: Grace
+        image: Grace,
+        connections: ["Worth"]
     },
     {
         name: 'Hendrika Vann Dalen',
@@ -422,7 +423,7 @@ export const STUDENTS: Student[] = [
         year: "2nd",
         school: "Prismari",
         jobs: [],
-        clubs: [FINE_ARTS, CHEER, PARTY].sort((a,b) => {return a.name.localeCompare(b.name)}),
+        clubs: [FINE_ARTS, CHEER].sort((a,b) => {return a.name.localeCompare(b.name)}),
         frequents: [TAVERN, STADIUM].sort((a,b) => {return a.name.localeCompare(b.name)}),
         freshRoomies: ["Zephyr", "Shaw"].sort(),
         roommates: ["Grace", "Elowen"],
@@ -505,7 +506,8 @@ export const STUDENTS: Student[] = [
         frequents: [],
         roommates: ["Cyr", "Ciaran"],
         freshRoomies: ["Grace", "Brilliance"].sort(),
-        image: Worth
+        image: Worth,
+        connections: ["Grace"]
     },
     {
         name: 'Zinnia',
@@ -518,7 +520,8 @@ export const STUDENTS: Student[] = [
         frequents: [],
         roommates: ["Brilliance"],
         freshRoomies: ["Jewel"].sort(),
-        image: Zinnia
+        image: Zinnia,
+        // connections: ["Chrys"]
     },
     {
         name: 'Cerise',
@@ -657,6 +660,7 @@ export const STUDENTS: Student[] = [
     //     frequents: [],
     //     roommates: [],
     //     freshRoomies: []
+    //     connections: ["Zinnia"]
     // },
     // {
     //     name: 'Laanpen',
