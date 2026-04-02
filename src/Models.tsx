@@ -6,11 +6,13 @@ name: string,
 pronouns: string
 shortName: string,
 frequents: Location[],
+image?: string
 }
 
 export interface Faculty extends Person {
 school: School,
 classes: Class[],
+title: string
 }
 
 export interface Student extends Person{
@@ -21,7 +23,6 @@ jobs: Job[],
 classes: Class[],
 roommates: string[]
 freshRoomies?: string[]
-image?: string
 connections?: string[]
 }
 

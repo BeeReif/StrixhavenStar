@@ -7,6 +7,7 @@ import { getLocationByShortName, LOCATIONS } from "../assets/Locations";
 import { theme } from "../Theme";
 import { useState } from "react";
 import Strixhaven from "../assets/images/Strix.png"
+import { FACULTY } from "../assets/Faculty";
 
 export function NavBar() {
 
@@ -26,6 +27,7 @@ export function NavBar() {
     const Options = CLUBS.flatMap((el) => { return { name: el.name, shortName: el.shortName } })
         .concat(STUDENTS.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
         .concat(LOCATIONS.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
+        .concat(FACULTY.flatMap((el) => { return { name: el.name, shortName: el.shortName } }))
         .concat([
             { name: "Central", shortName: "Central" },
             { name: "Lorehold", shortName: "Lorehold" },
@@ -75,7 +77,7 @@ export function NavBar() {
                     >
                         <MenuItem onClick={handleClose} component={Link} to="/campus">Campus</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/student">Students</MenuItem>
-                        {/* <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem> */}
+                        <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/location">Locations</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/club">Clubs</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/TODO">TODO</MenuItem>
@@ -100,6 +102,12 @@ export function NavBar() {
                                 component={Link}
                                 to="/student"
                                 color="inherit">Students
+                            </Button>
+                            <Divider orientation="vertical" flexItem variant='middle' />
+                            <Button
+                                component={Link}
+                                to="/faculty"
+                                color="inherit">Faculty
                             </Button>
                             <Divider orientation="vertical" flexItem variant='middle' />
                             <Button

@@ -637,5 +637,67 @@ export const BIOS = new Map<String, String>([
         `single-minded, stubborn, and obsessive about her craft. But that craft is beautiful, especially to those who take the `+
         `time to see it for what it is.`
     ],
-    
+    [
+        "Mara", `Mara is a very kindhearted woman, patient in the classroom and---as her title suggests, very orderly! She has, `+
+        `in previous times, worked as an archivist, preserving the histories of countless nations, serving as a voice and a preservationist `+
+        `of many cultures that she's held dear to her heart. As a mage, she has mastered the art of careful creation---exemplified the most by `+
+        `the existence of a companion of hers that we will get into in just a bit.`
+    ],
+    [
+        "Rathal", `The exemplification of certain skills of Mara's, Rathal appears to be an elven woman, gruff, strong, and athletic---a true protector, `+
+        `but the truth of the matter is that she is a warforged, created a long while ago by mara to serve as protection and as a companion during her travels, `+
+        `and the two of them are very close! they joined strixhaven's faculty as a bonded pair and still remain in close proximity---although Rathal has her own `+
+        `responsibilities in terms of classes, just as Mara has hers, and Rathal has found some level of fulfillment in coaching many of strixhaven's intramural `+
+        `sports, she is happiest when she is at Mara's side.`
+    ],
+    [
+        "Fiamma", `Fiamma began her life and studies in the realms of belief and religion, but is openly disillusioned with the ways that...certain faculty members `+
+        `on campus approach their beliefs these days. instead, she prefers to look at things through the rational lens of history, although there is a certain level `+
+        `of fascination and comfort she takes in the true free will of "humanity" that draws her toward the perspective of chaos, the perspective that characterizes `+
+        `people as individuals, driven by emotion, faith, and their brotherhood with others. She is a satyr, she does hail from the feywild, she practices what she `+
+        `calls the old faith, and a particular niche of her interests has to do with the history of the feywild's courts and politics---those histories that she has `+
+        `access to despite the secrecy that clouds all manner of things in that sphere.`
+    ],
+    [
+        "Akshaya", `Akshaya has fallen neatly into lorehold's faculty, not because they are a person trained in history or particularly interested in teaching, `+
+        `but because of an age old arrangement they held with a higher up in days long past---they, themselves, are a relic of history, a naga that has lived through `+
+        `centuries, often at conflict's heart---and many of their histories have been fabled in texts that are kept in the archives of the biblioplex on a need to know basis. `+
+        `They are an intense figure that takes a certain enjoyment in their new position---relatively new, of course, they've been teaching for decades---their beliefs `+
+        `more...radical, and mayhaps a bit less moral than many of their peers, but a perspective they insist is necessary. They think each and every student should understand `+
+        `why any person or culture or movement or nation has wanted to burn the world, and decide if they were right in that belief.`
+    ],
+    [
+        "Johanna", `A human woman who has made quite the legacy for herself despite the limited time she has, Johanna is a skilled mage that is learned in the realm of `+
+        `elemental ice---so familiar with it, even, that it's started to take root in her body, slowly transforming her with each spell she casts to use it to further her art. `+
+        `She emblemizes the spirit of perfection in prismari because of how far she's gone to master her craft, and encourages her students to be critical of themselves, `+
+        `their work, and how they might improve themselves in their expression---expressiveness itself is not her enemy, of course not, but what use is emotion and emotional `+
+        `art if it isn't housed in the proper vessel?`
+    ],
+    [
+        "Adresin", `Johanna's more easygoing counterpart, Adresin is a water genasi that has, in his own ways, mastered his art---and he'd suggest that any of his students have `+
+        `the potential to use their emotion to create something beautiful, something impactful---something that makes someone in the world feel seen. he falls in line with `+
+        `expression particularly because he views art as a means to connect with others, and hopes to foster a community between his students where they can resonate with `+
+        `one another, the shared experiences they all have as strixhaven students, the shared experiences they may have from before, what drives them to be here and make the `+
+        `choices that they do, and see something not so different from themselves.`
+    ],
+    [
+        "Odette", `In her approach to art, Odette emphasizes the ways that art and the disciplines within it can be passed down from generation to generation---many of her `+
+        `artistic philosophies she has adopted from those impactful souls that came before her, and she believes that the tradition of it, the ability to adopt a craft as `+
+        `your own and emulate those that you admire---ultimately creating something unique---is a beautiful act, and she hopes to inspire students in that way. `+
+        `She comes across as very kind, quiet, and demure, but she does have a bright, bubbly side---one that comes out on the field, where she serves as the coach `+
+        `for the cheer team with a level of gusto that would be surprising!`
+    ],
+    [
+        "Scoria", `A fire genasi who once fancied himself a pirate captain, Scoria's path to Strixhaven was not one you'd call linear---but he found himself here nonetheless, `+
+        `and has plenty of stories to tell about his time at sea. The instrument he prefers to use is his voice, and he values his art in a similar manner to adresin---he believes `+
+        `that art, and music, is a glue that can hold people together, keep them moving to the next destination, and help remind them of home when those days at sea seem more `+
+        `like a prison than freedom.`
+    ],
+    [
+        "Valora", `An eladrin whose hair looks like literal lavender flowers, a lot of Valora's experiences have been in the saturated colors of the feywild that she's `+
+        `called her home, and much of her magic is harnessing the pure, prismatic energy that color can offer. In coming to Strixhaven, she hopes to serve as a mentor `+
+        `for students who might suffer the same social fears that she does---a certain disconnect from the world that is in favor of the world that could be, and she `+
+        `favors expression because of how unapologetic it can be. It can be used to connect with others, yes, and that's important and all well and good, but it can `+
+        `be used to explore the self and the soul in a way that she feels is even more important.`
+    ]
 ])

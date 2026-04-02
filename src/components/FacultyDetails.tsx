@@ -1,4 +1,4 @@
-import { Alert, Container, List, ListItemText, Paper, Typography, Grid2 as Grid, ListItem, Card, CardContent, Box } from "@mui/material";
+import { Alert, Container, List, ListItemText, Paper, Typography, Grid2 as Grid, ListItem, Card, CardContent, Box, CardMedia } from "@mui/material";
 import { getMembersByClub } from "../assets/Students";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
@@ -26,10 +26,13 @@ export function FacultyDetails() {
             <Grid container spacing={3}>
                 {Faculty ?
                     <>
-                        <Grid container size={12} alignItems={"center"}>
+                        <Grid container size={12} alignItems={"flex-start"}>
                             <Grid size={{ xs: 10, sm: "auto" }}>
                                 <Typography variant="h4">
                                     {Faculty?.name} ({Faculty.pronouns})
+                                </Typography>
+                                <Typography variant="h5">
+                                    {Faculty?.title}
                                 </Typography>
                             </Grid>
                             {
@@ -42,12 +45,25 @@ export function FacultyDetails() {
                                             src={logo}
                                             alt={Faculty.name}
                                             marginTop={0}
+                                            alignItems={'top'}
                                         />
                                     </Grid>
                                     : null
                             }
                         </Grid>
-                        
+                        {
+                            Faculty.image ? <Grid>
+                                <Card>
+                                    <CardMedia
+                                        height={300}
+                                        component="img"
+                                        image={Faculty.image}
+                                        alt={Faculty.name}
+                                    />
+                                </Card>
+                            </Grid>
+                                : null
+                        }
 
                         <Grid size={12}>
                             <Grid container size={12} spacing={3}>

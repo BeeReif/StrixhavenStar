@@ -13,6 +13,7 @@ import { NavBar } from './components/NavBar';
 import { FacultyDetails } from './components/FacultyDetails';
 import { IssuesDetails } from './components/IssuesDetails';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { FacultyLookup } from './components/FacultyLookup';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               <Route path="location/:name" element={<LocationDetails />} />
               <Route path="club/:name" element={<ClubDetails />} />
               <Route path="campus/:name" element={<CampusDetails />} />
+              <Route path="faculty" element={<FacultyLookup />} />
               <Route path="faculty/:name" element={<FacultyDetails />} />
 
               <Route path="issues" element={
