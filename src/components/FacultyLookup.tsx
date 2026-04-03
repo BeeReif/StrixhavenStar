@@ -14,12 +14,13 @@ export function FacultyLookup() {
         apiRef.current?.autosizeColumns({ includeHeaders: true })
     })
 
-    const paginationModel = { page: 0, pageSize: isMobile ? 100 : 10 };
+    const paginationModel = { page: 0, pageSize: isMobile ? 100 : 12 };
     const apiRef = useGridApiRef()
 
     const rows = FACULTY.map((prof) => {
         return {
             name: { name: prof.name, shortName: prof.shortName },
+            dichotomy: prof.title.split(" ").pop(),
             school: prof.school,
             clubs: getClubsByFaculty(prof),
             classes: prof.classes
@@ -28,7 +29,7 @@ export function FacultyLookup() {
 
     const columns: GridColDef[] = [
         {
-            field: 'name', headerName: 'Name', minWidth: 300,
+            field: 'name', headerName: 'Name', minWidth: 250,
             //@ts-expect-error ReactNode and JSX.Element confusion 
             renderCell: (params: GridPreProcessEditCellProps) => {
                 return <Link to={`/faculty/${params.row.name.shortName}`}>
@@ -45,6 +46,7 @@ export function FacultyLookup() {
 
             },
         },
+        { field: 'dichotomy', headerName: 'Dichotomy', minWidth: isMobile ? 50 : 150 },
         {
             field: 'classes', headerName: 'Classes', minWidth: isMobile ? 350 : 500,
             valueGetter: (params: Class[]) => {
@@ -106,7 +108,7 @@ export function FacultyLookup() {
                             }
                         }}
                         hideFooterPagination={isMobile}
-                        pageSizeOptions={isMobile ? [100] : [10]}
+                        pageSizeOptions={isMobile ? [100] : [12]}
                     />
                 </Grid>
             </Grid>

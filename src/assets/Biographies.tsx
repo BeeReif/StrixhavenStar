@@ -705,5 +705,108 @@ export const BIOS = new Map<String, String>([
         `for students who might suffer the same social fears that she does---a certain disconnect from the world that is in favor of the world that could be, and she `+
         `favors expression because of how unapologetic it can be. It can be used to connect with others, yes, and that's important and all well and good, but it can `+
         `be used to explore the self and the soul in a way that she feels is even more important.`
+    ],
+    [
+        "Jianhua", `An earth genasi that seems to be born from marble---very carefully put together with distinct features that seem lovingly carved of stone. `+
+        `Jianhua is a very shrewd businessman, and their love for the concepts of Quandrix began as a passion for mathematics and patterns in the context of wealth! `+
+        `They believe that the patterns they and their colleagues observe are intrinsic to the world---that in certain ways, these patterns can be replicated to expand `+
+        `and foster the world as a whole. For the most part, though, much of their interest lies in how these patterns can be manipulated to improve the present, and their `+
+        `specific research is confined to the material plane and the realms within it.`
+    ],
+    [
+        "Aleksander", `Aleksander is an eccentric iconoclast in many senses, with ambitions and interests that he is determined to make outlive him! as a human, `+
+        `he is very aware of the time that he has on this mortal coil to research, to make discoveries, to improve the methods of research in pursuit of efficiency, `+
+        `and in certain ways he has chosen to pursue teaching for as long as he has out of a desire to further cement the lessons he's learned in the minds of those `+
+        `researchers that will come after him! Unlike his level-headed, firmly rooted counterpart, much of professor Larsen's research can get...out of hand. `+
+        `He is fascinated by the planes that overlap and surround the material and uses the patterns and equations he's grown oh so familiar with to explore them. `+
+        `He's found his home in theory because of how comfortable he is with hedging his bets on his understanding of the theoretical---a trust in himself that some `+
+        `might call egotistical or foolhardy, but he would call smart.~ It's a certainty that every Quandrix student in his introductory course has been confronted `+
+        `directly with the fact that their lives are finite and miniscule in the grand scheme of things, and if they don't know upon choosing Quandrix what impact `+
+        `they'd like to leave on the world, they'd better figure it out while they have the time to.`
+    ],
+    [
+        "Isolde", `Professor Gallo is a very regal yuan-ti, consistently dressed in finery and surrounded by fine things! She admires both deans of her college but `+
+        `ultimately falls on the side of theory because she, in addition to her admiration of what is, feels a desire to create more using the arcane equations she has `+
+        `at her disposal. She jokes every now and then that, in another life, she might have joined Prismari and taken a more elemental tact in that context.....but ultimately, `+
+        `this is untrue. She much prefers the predictability and maneuverability of the equations that she knows as well as she does, so that she can pluck, shift, and shape `+
+        `things around until they're just to her liking---in particular, while she's plenty adept at handling the modrons that can be found throughout quandrix's campus, `+
+        `she finds truer passion in designing more complex machinery, objects, and at times, spells themselves, that make life easier AND are aesthetically pleasing, `+
+        `with the avant garde flair that she prefers.`   
+    ],
+    [
+        "Elysian", `Elysian is an aasimar that has found their own faith in the concepts of order, but their interest is in Quandrix specifically because of how they apply `+
+        `the equations found in nature to their own understanding of divinity, and a lot of their magic has to do with fostering the growth that they find---both in developing `+
+        `new kinds and helping the existing roots continue to grow. Their perspective on a lot of the ideas within Quandrix have to do with the grand designs of the divine---which `+
+        `they understand not all will agree with, but is how they've found their own peace.`
+    ],
+    [
+        "Caladrius", `An aarakocra whose magic stems from their connection to the divine, Caladrius emblemizes the power of communication and words to bring people together, `+
+        `specifically through the lens of faith as a tool of connection. This is a perspective that is relatively recent to Silverquill---and much of the faculty has their own `+
+        `ponderances of this change that they're willing to share (some only behind closed doors). Nonetheless, Caladrius aspires to be a kind, empathic mentor that their students `+
+        `and colleagues can trust---they are by far the most straightforward Silverquill professor of the bunch!`
+    ],
+    [
+        "Entertain", `The counterpart to Caladrius, Entertain is the picture of intrigue in how he handles his business. He is charismatic and polite, but rarely kind, `+
+        `and much of his tutelage in terms of Silverquill has to do with the flow of information---the timing with which the truth is revealed if it is to be revealed at all, `+
+        `the power of omission rather than outright fabrication, and the way that stories, yes, can be used to uplift, but can also be used to conceal and challenge.`
+    ],
+    [
+        "Caspian", `Isolde's more...verbose, brother, Caspian has found his home in Silverquill for similar reasons---he, too, enjoys certain predictable factors, `+
+        `but where his sister feels more at home managing equations and the fabric of the arcane, he feels very confident in his ability to manage people. `+
+        `He enjoys the rapport that he holds with the other faculty of strixhaven---in certain ways, he serves as a middle man for many---in particular, `+
+        `those that are hoping for more straightforward answers than they'd receive from a certain dean, and he's willing to provide---but this pinch point affords `+
+        `him a level of power that many are aware of. He just hasn't decided to do anything with it...quite yet~`
+    ],
+    [
+        "Emerson", `In the dichotomy, Emerson understands the importance of discretion, of monitoring the flows of information that entertain likes to harp on---and `+
+        `they've done their time in the shadows before arriving at Strixhaven, learning to manage the secrets of others and tip the right hands at the right times. `+
+        `But in more recent years, they find much more hope in providing spaces where people can feel heard, seen, and believed. As an instructor of radiance, `+
+        `they serve as a living expose of some of the techniques that entertain swears by---which puts them into an odd stalemate that the both of them are happy enough `+
+        `to exist in for now. Although Emerson doesn't always understand the faith that Caladrius speaks of when they talk about giving hope to the hopeless, `+
+        `they try---partially because somewhere along the way, in meeting the right people and going on the right journeys, they've found their own.`
+    ],
+    [
+        "Arabella", `Arabella's values are close to that of (stereo)typical halflings---her family is very important to her, and she puts a lot of work into making `+
+        `the spaces she spends the most time in feel like home for all who enter them. She is a nurturer, a gardener, and a mentor that can be afforded the utmost `+
+        `trust---there is very little that she would discard or condemn a student of hers for, for better or for worse. Her perspective on the dichotomy is very much `+
+        `so that the purpose of life is to live, to strive for greater, and that survival is an inherent drive for all beings that live---and one that should be admired and fostered.`
+    ],
+    [
+        "Genesis", `Less mortal, more concept, Genesis is the epitome of the vein---they understand intrinsically the way that life can be used to nourish and sustain other life. `+
+        `They have their own fascinations with these concepts of "survival drive" that professor Abernathy praises, but they view the fight to survive quite similarly to the way `+
+        `a spider views a fly buzzing futilely in its web. They do, however, agree---community is important, and they have built their own, although it functions more like a `+
+        `colony---one with individual cells that multiply and propagate their own cultures. Above all else, their core belief is that the fit will survive, and those unfit will `+
+        `still have their own, important use in sustaining the life that remains.`
+    ],
+    [
+        "Dottore", `Doctor Rovina has a reputation that precedes her in most circles, and she's very droll these days about addressing the rumors and preconceived notions her `+
+        `students enter her classroom with. Yes, she is the "unfeeling shadar-kai doctor" that "experiments with questionable ethics" on "mortal subjects'...but she'd insist `+
+        `that framing it that way is a rather vast oversimplication and exaggeration, made by her critics---many of whom would be doing the same things that she does if they `+
+        `could only find a similar niche to give them the go ahead! She slots into the ideas of the vein rather easily because much of her experimentation has to do with using `+
+        `life to sustain other life---not quite as...vampirically, but physically---and she in her own ways uses her expertise as a doctor to understand, to assess, and to mend `+
+        `for the greater good. Her craft and her experiments bring her a great deal of joy and passion, after all! What good would her talents be if she did not share `+
+        `them---with her students, especially?~`
+    ],
+    [
+        "Eloise", `A goliath hailing from a once large tribe, Eloise found her way to Strixhaven because she shares similar passions to a certain doctor---although, `+
+        `where Doctor Rovina's experimentation is often for the sake of progress, of improvement, and of cultivating a new sort of survival that is more successful and `+
+        `efficient hand in hand with her magic, Eloise is much more fascinated with those things that have passed through the veil and blurring the lines between life and death. `+
+        `She is very familiar with bloodshed, but she believes that every life has some meaning and merit to it in its own way, and to let that end when life ends is...quite the `+
+        `waste, to say the least.`
+    ],
+    [
+        "Diana", `Looking at her and the way she handles herelf, you might assume that Diana falls under the vein in withrbloom's dichotomy. After all, she is far from a healer, `+
+        `prefers more aggressive tacts in her problem solving, and can often be found patroling the fens and the bog in search of quarry to hunt, rather animalistically. `+
+        `However, that idea of survival is her guiding principle---she believes that the adaptability of living beings is the most beautiful thing about them, and that every `+
+        `creature has the right to fight to survive, tooth and nail, as she has. She thinks that the natural world is in its own ways practical, and that learning to survive `+
+        `and traverse it is the first step toward pursuing larger ambitions.`
+    ],
+    [
+        "Jade", `A fairly recent graduate of Strixhaven themselves, Jade returned as a direct aide to Arabella first, and then as a proper instructor! A dryad, they admire the `+
+        `beauty found in all living things, but above all else value the sense of community that they can provide others by offering themselves up as a healer, a mediator, `+
+        `and a sanctuary in times of danger or strife. Of course, they're still finding their wings in taking initiative in these issues, but they offer quiet insights when `+
+        `they have the opportunity to, and in particular have an interest in botany and agriculture that they love to share with the students who'll listen. They are a calm, `+
+        `grounding figure in an environment that is rooted, yes, in community and togetherness, but is very much so playing into the two groupings of Witherbloom's discipline, `+
+        `and they make a point to relate as much as they can with students who are still finding their way forward.`
     ]
 ])
