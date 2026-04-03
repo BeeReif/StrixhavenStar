@@ -19,7 +19,7 @@ export function MapViewer(props: MapViewerProps) {
 
     return <Dialog open={props.open} maxWidth="md" onClose={() => props.setOpen(false)}>
         <DialogTitle>
-            <Stack direction={"row"} alignContent={'center'}>
+            <Stack direction={"row"} alignItems={'center'}>
                 <Select
                     size="small"
                     value={map}
@@ -37,8 +37,9 @@ export function MapViewer(props: MapViewerProps) {
                 <IconButton onClick={() => props.setOpen(false)}><CloseIcon /></IconButton>
             </Stack>
         </DialogTitle>
-        <Card>
+        <Card sx={{overflowY: 'auto'}}>
             <CardMedia
+                sx={{maxHeight: "100vh"}}
                 component="img"
                 image={map}
                 alt={"Map"}
