@@ -242,10 +242,10 @@ export const BIOS = new Map<String, String>([
     [
         "Dusty", `Fourth year Dusty has worked hard to cultivate a reputation as a "cool" upper classmen, they don't do that hazing shit, `+
         `they offer actually useful advice, and all around seem to like having a flock of little ducklings rather than bemoan it. `+
-        `They have a bunch of tales from their time on strixhaven campus and the hijinks they've gotten up to as well as tales from `+
+        `They have a bunch of tales from their time on Strixhaven campus and the hijinks they've gotten up to as well as tales from `+
         `summers in their far off home or adventures they went on before ever becoming a student. They try to offer a hopeful perspective `+
-        `when it comes to strixhaven, this is a place of adventure and wonder, and even if it's hard and asks a lot of you as a student, `+
-        `ultimately they think everyone who is here is lucky to be. They can be found all over lorehold college from the depths of `+
+        `when it comes to Strixhaven, this is a place of adventure and wonder, and even if it's hard and asks a lot of you as a student, `+
+        `ultimately they think everyone who is here is lucky to be. They can be found all over Lorehold college from the depths of `+
         `pillardrop where they can be seen foregoing the treacherous bridges and instead simply scaling the steep walls of the chasm. `+
         `They also spend an absurd amount of time in the cultivarium for how little interest they have in Quandrix courses, and when theyre `+
         `in a slightly more rambunctious mood they make their way to the fens. Theyve done their time in banshee's bog but.... `+
@@ -254,7 +254,7 @@ export const BIOS = new Map<String, String>([
     ],
     [
         "Khalil", "First year Khalil can almost exclusively be found on the central campus. His time is spent either in class, "+
-        `at one of his handful of campus jobs, or at the strixhaven stadium practicing for mage tower. He is a quiet man, one who `+
+        `at one of his handful of campus jobs, or at the Strixhaven stadium practicing for mage tower. He is a quiet man, one who `+
         `almost seems more a boy still except for the inexplicable depth to his gaze. He has the eyes of someone much older, someone `+
         `who has seen maybe too much of the world and what it holds. This doesn't seem to break his stride though as he's known to be a `+
         `reliable classmate, teammate, and coworker who always has a kind encouragement for those struggling. Despite being headed for `+
@@ -516,19 +516,19 @@ export const BIOS = new Map<String, String>([
     [
         "Elio", `Elio is a year one who can be found pretty much anywhere on campus, even in areas he probably shouldn't be in, `+
         `its also more common than not to find him perched on a higher ledge where he does a fair bit of people watching. Hes `+
-        `gotta know whats happening to other students so he can properly dick around with them. He is in the school of prismari, `+
+        `gotta know whats happening to other students so he can properly dick around with them. He is in the school of Prismari, `+
         `so much of what he does is a performance, he wants people to see the messes he makes or pranks he pulls. He does a lot of `+
         `flashy magic when he can get away with it. Hes extremely social, and will appear very suddenly in a group of people like he `+
         `was there the whole time, and who knows? maybe he was. I dint think many people truely enjoy his company, but that doesn't `+
         `stop him from finding ways to enjoy theirs. Hes probably gotten other students in trouble for something hes done more than once.`
     ],
     [
-        "Brilliance", `Brilliance is a second year who is just so happy to be here. She is a witherbloom and pretty much can always `+
+        "Brilliance", `Brilliance is a second year who is just so happy to be here. She is a Witherbloom and pretty much can always `+
         `be found in a greenhouse, or herb lab where she can work on processing things she has taken from said greenhouse. She LOVES `+
         `to socialized and is extremely awkward and even clumsier. She spends most nights falling asleep studying, sometimes not even `+
         `in her own room, she woken up in the herb lab more than once this year now that shes so comfortable being there. She hangs out in the coffee `+
         `shop and the diner when she feels like getting out and seeing her friends, probably a few times a week. she probably has a job `+
-        `within witherbloom as well, herbs and healing is what she feels is her lifes purpose, she is very driven and working a job `+
+        `within Witherbloom as well, herbs and healing is what she feels is her lifes purpose, she is very driven and working a job `+
         `doing what she loves would be something she looks forward too. As far as what they see when they see her, she has `+
         `yellow skin, shes a tiefling. She is sunshine and `+
         `joy, shes got a slightly goofy smile and very obviously wants to be told words of affirmation, not that shes not confident in `+
@@ -536,14 +536,14 @@ export const BIOS = new Map<String, String>([
     ],
     [
         "Brynn", `Brynn Alfyr is a year three, a half-elf who was raised in the woods, learning how to forage and take care of herself, `+
-        `now shes come to school to learn more about her passion, history. She is a part of lorehold and is always excited to be in `+
+        `now shes come to school to learn more about her passion, history. She is a part of Lorehold and is always excited to be in `+
         `class ESPECIALLY when is a interactive class/assignment where they get to go to the dig site. girl is autistic as fuck when it `+
         `comes to rocks, shiny things, and history so digging for stuff is like her playground. She spends as much time as she can `+
         `researching and digging. She doesn't get out and socialize as often as some but still makes time to go to the diner at `+
         `least once a week. She is very green coded and whimsical, but still a little bit grounded.`
     ],
     [
-        "Ramona", `Ramona is a fourth year in silverquill. She is a bard with a love for telling stories. Originally she became a `+
+        "Ramona", `Ramona is a fourth year in Silverquill. She is a bard with a love for telling stories. Originally she became a `+
         `hexblood in order to become a truly great story teller, however not all the stories she is gifted by the spirits a happy ones. `+
         `You can tell when you see her that she is slightly haunted by the things she has seen and the choices she has made, `+
         `but the love for her stories is even deeper now. They hold even more weight and power to her knowing what they mean `+
@@ -647,7 +647,7 @@ export const BIOS = new Map<String, String>([
         "Rathal", `The exemplification of certain skills of Mara's, Rathal appears to be an elven woman, gruff, strong, and athletic---a true protector, `+
         `but the truth of the matter is that she is a warforged, created a long while ago by Mara to serve as protection and as a companion during her travels, `+
         `and the two of them are very close! they joined Strixhaven's faculty as a bonded pair and still remain in close proximity---although Rathal has her own `+
-        `responsibilities in terms of classes, just as Mara has hers, and Rathal has found some level of fulfillment in coaching many of strixhaven's intramural `+
+        `responsibilities in terms of classes, just as Mara has hers, and Rathal has found some level of fulfillment in coaching many of Strixhaven's intramural `+
         `sports, she is happiest when she is at Mara's side.`
     ],
     [
@@ -665,7 +665,7 @@ export const BIOS = new Map<String, String>([
         `access to despite the secrecy that clouds all manner of things in that sphere.`
     ],
     [
-        "Akshaya", `Akshaya has fallen neatly into lorehold's faculty, not because they are a person trained in history or particularly interested in teaching, `+
+        "Akshaya", `Akshaya has fallen neatly into Lorehold's faculty, not because they are a person trained in history or particularly interested in teaching, `+
         `but because of an age old arrangement they held with a higher up in days long past---they, themselves, are a relic of history, a naga that has lived through `+
         `centuries, often at conflict's heart---and many of their histories have been fabled in texts that are kept in the archives of the biblioplex on a need to know basis. `+
         `They are an intense figure that takes a certain enjoyment in their new position---relatively new, of course, they've been teaching for decades---their beliefs `+
@@ -675,7 +675,7 @@ export const BIOS = new Map<String, String>([
     [
         "Johanna", `A human woman who has made quite the legacy for herself despite the limited time she has, Johanna is a skilled mage that is learned in the realm of `+
         `elemental ice---so familiar with it, even, that it's started to take root in her body, slowly transforming her with each spell she casts to use it to further her art. `+
-        `She emblemizes the spirit of perfection in prismari because of how far she's gone to master her craft, and encourages her students to be critical of themselves, `+
+        `She emblemizes the spirit of perfection in Prismari because of how far she's gone to master her craft, and encourages her students to be critical of themselves, `+
         `their work, and how they might improve themselves in their expression---expressiveness itself is not her enemy, of course not, but what use is emotion and emotional `+
         `art if it isn't housed in the proper vessel?`
     ],
@@ -683,7 +683,7 @@ export const BIOS = new Map<String, String>([
         "Adresin", `Johanna's more easygoing counterpart, Adresin is a water genasi that has, in his own ways, mastered his art---and he'd suggest that any of his students have `+
         `the potential to use their emotion to create something beautiful, something impactful---something that makes someone in the world feel seen. he falls in line with `+
         `expression particularly because he views art as a means to connect with others, and hopes to foster a community between his students where they can resonate with `+
-        `one another, the shared experiences they all have as strixhaven students, the shared experiences they may have from before, what drives them to be here and make the `+
+        `one another, the shared experiences they all have as Strixhaven students, the shared experiences they may have from before, what drives them to be here and make the `+
         `choices that they do, and see something not so different from themselves.`
     ],
     [
@@ -729,7 +729,7 @@ export const BIOS = new Map<String, String>([
         `ultimately falls on the side of theory because she, in addition to her admiration of what is, feels a desire to create more using the arcane equations she has `+
         `at her disposal. She jokes every now and then that, in another life, she might have joined Prismari and taken a more elemental tact in that context.....but ultimately, `+
         `this is untrue. She much prefers the predictability and maneuverability of the equations that she knows as well as she does, so that she can pluck, shift, and shape `+
-        `things around until they're just to her liking---in particular, while she's plenty adept at handling the modrons that can be found throughout quandrix's campus, `+
+        `things around until they're just to her liking---in particular, while she's plenty adept at handling the modrons that can be found throughout Quandrix's campus, `+
         `she finds truer passion in designing more complex machinery, objects, and at times, spells themselves, that make life easier AND are aesthetically pleasing, `+
         `with the avant garde flair that she prefers.`   
     ],
@@ -753,7 +753,7 @@ export const BIOS = new Map<String, String>([
     [
         "Caspian", `Isolde's more...verbose, brother, Caspian has found his home in Silverquill for similar reasons---he, too, enjoys certain predictable factors, `+
         `but where his sister feels more at home managing equations and the fabric of the arcane, he feels very confident in his ability to manage people. `+
-        `He enjoys the rapport that he holds with the other faculty of strixhaven---in certain ways, he serves as a middle man for many---in particular, `+
+        `He enjoys the rapport that he holds with the other faculty of Strixhaven---in certain ways, he serves as a middle man for many---in particular, `+
         `those that are hoping for more straightforward answers than they'd receive from a certain dean, and he's willing to provide---but this pinch point affords `+
         `him a level of power that many are aware of. He just hasn't decided to do anything with it...quite yet~`
     ],
@@ -779,7 +779,7 @@ export const BIOS = new Map<String, String>([
         `still have their own, important use in sustaining the life that remains.`
     ],
     [
-        "Dottore", `Doctor Rovina has a reputation that precedes her in most circles, and she's very droll these days about addressing the rumors and preconceived notions her `+
+        "Rovina", `Doctor Rovina has a reputation that precedes her in most circles, and she's very droll these days about addressing the rumors and preconceived notions her `+
         `students enter her classroom with. Yes, she is the "unfeeling shadar-kai doctor" that "experiments with questionable ethics" on "mortal subjects'...but she'd insist `+
         `that framing it that way is a rather vast oversimplication and exaggeration, made by her critics---many of whom would be doing the same things that she does if they `+
         `could only find a similar niche to give them the go ahead! She slots into the ideas of the vein rather easily because much of her experimentation has to do with using `+

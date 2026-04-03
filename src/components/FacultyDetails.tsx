@@ -105,6 +105,17 @@ export function FacultyDetails() {
                                                 })} />
                                             </ListItem>
                                         })}
+                                        {Faculty.connections &&
+                                            <ListItem>
+                                                <ListItemText primary="Other Notable Connections" secondary={Faculty.connections.map((connection, i) => {
+                                                    return <><Link to={
+                                                        getFacultyByShortName(connection) ?
+                                                        `/faculty/${connection}` : `/student/${connection}`}>
+                                                        {connection}
+                                                    </Link>{i < Faculty.connections!.length - 1 ? ", " : ""}</>
+                                                })} />
+                                            </ListItem>
+                                        }
                                     </List>
                                 </Grid>
                             </Grid>

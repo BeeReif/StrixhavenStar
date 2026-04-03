@@ -49,6 +49,19 @@ export function ClubLookup() {
             sortComparator: (a: Location, b: Location) => a.name.localeCompare(b.name)
         },
         {
+            field: 'faculty', headerName: 'Faculty', minWidth: isMobile ? 100 : 150,
+            //@ts-expect-error ReactNode and JSX.Element confusion
+            renderCell: (params: GridPreProcessEditCellProps) => {
+                return <>{params.row.faculty?.map((faculty: string, i: number) => {
+                    return <><Link to={`/faculty/${faculty}`}>
+                        {faculty}
+                    </Link>{i < params.row.faculty.length - 1 ? ", " : ""}
+                    </>
+                })}
+                </>
+            }
+        },
+        {
             field: 'members', headerName: 'Members', minWidth: 500,
             valueGetter: (params: Student[]) => {
                 return params.flatMap((student: Student) => student.shortName).join(", ")
@@ -62,14 +75,6 @@ export function ClubLookup() {
                     </>
                 })}
                 </>
-            }
-        },
-        {
-            field: 'faculty', headerName: 'Faculty', minWidth: isMobile ? 100 : 150,
-            //@ts-expect-error ReactNode and JSX.Element confusion
-            renderCell: (params: GridPreProcessEditCellProps) => {
-                return <Link to={`/faculty/${params.row.faculty}`}>
-                    {params.row.faculty}</Link>
             }
         },
     ]

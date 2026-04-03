@@ -138,9 +138,10 @@ export function StudentDetails() {
                                         })}
                                         {Student.connections &&
                                             <ListItem>
-                                                <ListItemText primary="Other Notable Connections" secondary={Student.connections.map((student, i) => {
-                                                    return <><Link to={`/student/${student}`}>
-                                                        {student}
+                                                <ListItemText primary="Other Notable Connections" secondary={Student.connections.map((connection, i) => {
+                                                    return <><Link to={getStudentByShortName(connection) ?
+                                                        `/student/${connection}` : `/faculty/${connection}`}>
+                                                        {connection}
                                                     </Link>{i < Student.connections!.length - 1 ? ", " : ""}</>
                                                 })} />
                                             </ListItem>

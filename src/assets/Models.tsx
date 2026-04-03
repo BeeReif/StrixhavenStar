@@ -7,6 +7,7 @@ pronouns: string
 shortName: string,
 frequents: Location[],
 image?: string
+connections?: string[]
 }
 
 export interface Faculty extends Person {
@@ -23,7 +24,6 @@ jobs: Job[],
 classes: Class[],
 roommates: string[]
 freshRoomies?: string[]
-connections?: string[]
 }
 
 export interface Club {

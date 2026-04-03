@@ -17,49 +17,57 @@ export const DEAD_LANGUAGES: Club = {
     name: "The Dead Languages Society",
     shortName: "Dead Languages",
     location: GUARDIAN_HALL,
+    faculty: ["Akshaya"]
 }
 
 export const FINE_ARTS: Club = {
     name: "The Distinguished Society of Fine Arts",
     shortName: "Fine Arts",
-    location: SANCTUARY
+    location: SANCTUARY,
+    faculty: ["Johanna"]
 }
 
 export const DRAGONCHESS: Club = {
     name: "Dragonchess Club",
     shortName: "Dragonchess",
-    location: CULTIVARIUM
+    location: CULTIVARIUM,
+    faculty: ["Mara"]
 }
 
 export const DEBATE: Club = {
     name: "The Strixhaven Speech and Debate Team",
     shortName: "Debate",
-    location: WHITERAVEN
+    location: WHITERAVEN,
+    faculty: ["Aleksander"]
 }
 
 export const HORTICULTURE: Club = {
     name: "Fantastical Horticulture",
     shortName: "Horticulture",
-    location: BLISS_HALL
+    location: BLISS_HALL,
+    faculty: ["Arabella", "Jade"]
 }
 
 export const ENTREPRENEURS: Club = {
     name: "The Future Entrepreneurs of Strixhaven",
     shortName: "Entrepreneurs",
-    location: MARIONNETTE_HALL
+    location: MARIONNETTE_HALL,
+    faculty: ["Jianhua"]
 }
 
 
 export const SILKBALL: Club = {
     name: "Intramural Silkball",
     shortName: "Silkball",
-    location: STADIUM
+    location: STADIUM,
+    faculty: ["Rathal", "Eloise"]
 }
 
 export const CHEER: Club = {
     name: "Mage Tower Cheer Squad",
     shortName: "Cheer",
-    location: STADIUM
+    location: STADIUM,
+    faculty: ["Odette"]
 }
 
 export const MAGE_TOWER: Club = {
@@ -77,13 +85,15 @@ export const LIFTERS: Club = {
 export const STAR: Club = {
     name: "The Strixhaven Star",
     shortName: "The Star",
-    location: WHITERAVEN
+    location: WHITERAVEN,
+    faculty: ["Entertain"]
 }
 
 export const FAITH: Club = {
     name: "The Student-Mages of Faith",
     shortName: "Mages of Faith",
-    location: COMMONS
+    location: COMMONS,
+    faculty: ["Caladrius", "Elysian"]
 }
 
 export const PARTY: Club = {

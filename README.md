@@ -3,6 +3,10 @@
 [Strixhaven Star](https://beereif.github.io/StrixhavenStar)
 
 # Changelog:
+## 1.2.1
+- Remaining Faculty
+- Fix places where faculty should be but weren't
+- Generalize connections to all Persons, connected relevant faculty
 ## 1.2.0
 - Add initial Faculty
 - Fix some UI quirks
