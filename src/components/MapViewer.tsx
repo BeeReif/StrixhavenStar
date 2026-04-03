@@ -39,7 +39,6 @@ export function MapViewer(props: MapViewerProps) {
         </DialogTitle>
         <Card sx={{overflowY: 'auto'}}>
             <CardMedia
-                sx={{maxHeight: "100vh"}}
                 component="img"
                 image={map}
                 alt={"Map"}
