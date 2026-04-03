@@ -24,21 +24,25 @@ export function ClubDetails() {
                             <List component={Paper} sx={{ minWidth: "10rem" }}>
                                 <ListItem>
                                     <ListItemText primary={"Location"} secondary={Club.location ? <Link to={`/location/${Club.location?.shortName}`}>
-                                                    {Club.location?.name}
-                                                </Link> : "Somewhere"} />
+                                        {Club.location?.name}
+                                    </Link> : "Somewhere"} />
                                 </ListItem>
                                 {
                                     Club.faculty &&
                                     <ListItem>
-                                        <ListItemText primary={"Faculty"} secondary={`${Club.faculty}`} />
+                                        <ListItemText primary={"Faculty"} secondary={Club.faculty.map((sponsor, i) => <>
+                                            <Link to={`/faculty/${sponsor}`}>
+                                                {sponsor}
+                                            </Link>{i < Club.faculty!.length  - 1 ? ", " : ""} </>
+                                        )} />
                                     </ListItem>
                                 }
                                 <ListItem>
                                     <ListItemText primary={"Members"} secondary={Members.map((member, i) => {
                                         return <><Link to={`/student/${member.shortName}`}>
-                                                    {member.shortName}
-                                                </Link>{i < Members.length - 1 ? ", " : ""}</>
-                                    })}/>
+                                            {member.shortName}
+                                        </Link>{i < Members.length - 1 ? ", " : ""}</>
+                                    })} />
                                 </ListItem>
                             </List>
                         </Stack>
