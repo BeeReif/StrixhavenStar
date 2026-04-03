@@ -1,4 +1,4 @@
-import { AppBar, Autocomplete, Button, Divider, TextField, Toolbar, Grid2 as Grid, useMediaQuery, IconButton, Menu, MenuItem } from "@mui/material";
+import { AppBar, Autocomplete, Button, Divider, TextField, Toolbar, Grid2 as Grid, useMediaQuery, IconButton, Menu, MenuItem} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from "react-router-dom";
 import { CLUBS, getClubByShortName } from "../assets/Clubs";
@@ -9,6 +9,8 @@ import { useState } from "react";
 import Strixhaven from "../assets/images/Strix.png"
 import { FACULTY, getFacultyByShortName } from "../assets/Faculty";
 import { CLASSES, getClassByShortName } from "../assets/Classes";
+import MapIcon from '@mui/icons-material/Map';
+import { MapViewer } from "./MapViewer";
 
 export function NavBar() {
 
@@ -17,6 +19,8 @@ export function NavBar() {
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+
+    const [openMap, setOpenMap] = useState(false)
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -38,7 +42,7 @@ export function NavBar() {
             { name: "Silverquill", shortName: "Silverquill" },
             { name: "Witherbloom", shortName: "Witherbloom" },
         ])
-        .sort((a,b) => a.name.localeCompare(b.name))
+        .sort((a, b) => a.name.localeCompare(b.name))
 
     function handleQuickSearch(_e: any, search: { name: string, shortName: string } | null) {
         if (!search) {
@@ -65,30 +69,33 @@ export function NavBar() {
         <Toolbar sx={{ width: "100%" }}>
             <Grid container size={12} flexGrow={1} alignItems={"center"}>
                 {isMobile ? <>
-                <Grid size={3}>
-                    <IconButton onClick={handleClick}>
-                        <MenuIcon />
-                    </IconButton>
+                    <Grid size={3}>
+                        <IconButton onClick={handleClick}>
+                            <MenuIcon />
+                        </IconButton>
+                        <IconButton onClick={() => setOpenMap(true)}>
+                            <MapIcon />
+                        </IconButton>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            slotProps={{
+                                list: {
+                                    'aria-labelledby': 'basic-button',
+                                },
+                            }}
+                        >
+                            <MenuItem onClick={handleClose} component={Link} to="/campus">Campus</MenuItem>
+                            <MenuItem onClick={handleClose} component={Link} to="/student">Students</MenuItem>
+                            <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem>
+                            <MenuItem onClick={handleClose} component={Link} to="/location">Locations</MenuItem>
+                            {/* <MenuItem onClick={handleClose} component={Link} to="/class">Classes</MenuItem> */}
+                            <MenuItem onClick={handleClose} component={Link} to="/club">Clubs</MenuItem>
+                            <MenuItem onClick={handleClose} component={Link} to="/TODO">TODO</MenuItem>
 
-                    <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        slotProps={{
-                            list: {
-                                'aria-labelledby': 'basic-button',
-                            },
-                        }}
-                    >
-                        <MenuItem onClick={handleClose} component={Link} to="/campus">Campus</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/student">Students</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/location">Locations</MenuItem>
-                        {/* <MenuItem onClick={handleClose} component={Link} to="/class">Classes</MenuItem> */}
-                        <MenuItem onClick={handleClose} component={Link} to="/club">Clubs</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/TODO">TODO</MenuItem>
-                    </Menu>
+                        </Menu>
                     </Grid>
                 </> :
                     <Grid container size={"grow"}>
@@ -141,9 +148,12 @@ export function NavBar() {
                                 color="inherit">todo
                             </Button>
                             <Divider orientation="vertical" flexItem variant='middle' />
+                            <IconButton onClick={() => setOpenMap(true)}>
+                                <MapIcon />
+                            </IconButton>
                         </Grid>
                     </Grid>}
-                <Grid size={{ xs: 8, sm: 3}} paddingRight={isMobile ? 0 : "5rem"}>
+                <Grid size={{ xs: 8, sm: 3 }} paddingRight={isMobile ? 0 : "5rem"}>
                     <Autocomplete
                         size="small"
                         options={Options}
@@ -159,5 +169,7 @@ export function NavBar() {
                 </Grid>
             </Grid>
         </Toolbar>
+        <MapViewer open={openMap} setOpen={setOpenMap}/>
+        
     </AppBar>
 }

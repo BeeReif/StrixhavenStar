@@ -3,6 +3,8 @@
 [Strixhaven Star](https://beereif.github.io/StrixhavenStar)
 
 # Changelog:
+## 1.3.0
+- Add map viewer
 ## 1.2.1
 - Remaining Faculty
 - Fix places where faculty should be but weren't
