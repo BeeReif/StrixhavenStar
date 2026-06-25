@@ -1,8 +1,10 @@
-import { Alert, Container, List, ListItemText, Paper, Typography, Grid2 as Grid, ListItem, Card, CardMedia, CardContent, Box } from "@mui/material";
+import { Alert, Container, List, ListItemText, Paper, Typography, Grid, ListItem, Card, CardMedia, CardContent, Box, Drawer, Toolbar, ListItemButton } from "@mui/material";
 import { getEmployeesByJob, getMembersByClub, getStudentByShortName } from "../assets/Students";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
 import { useEffect, useState } from "react";
+import { getArticlesByTag } from "../assets/Articles";
+// import { ScheduleGrid } from "./ScheduleGrid";
 
 export function StudentDetails() {
 
@@ -23,7 +25,7 @@ export function StudentDetails() {
             <Grid container spacing={3}>
                 {Student ?
                     <>
-                        <Grid container size={12} alignItems={"center"}>
+                        <Grid container size={12} sx={{ alignItems: "center" }}>
                             <Grid size={{ xs: 10, sm: "auto" }}>
                                 <Typography variant="h4">
                                     {Student?.name} ({Student.pronouns})
@@ -33,12 +35,10 @@ export function StudentDetails() {
                                 logo ?
                                     <Grid size={{ xs: 2 }}>
                                         <Box
-                                            width={50}
-                                            height={50}
+                                            sx={{ width: 50, height: 50, marginTop: 0 }}
                                             component="img"
                                             src={logo}
                                             alt={Student.name}
-                                            marginTop={0}
                                         />
                                     </Grid>
                                     : null
@@ -57,6 +57,7 @@ export function StudentDetails() {
                             </Grid>
                                 : null
                         }
+                        {/* <ScheduleGrid/> */}
 
                         <Grid size={12}>
                             <Grid container size={12} spacing={3}>
@@ -159,6 +160,24 @@ export function StudentDetails() {
                                 </CardContent>
                             </Card>
                         </Grid>
+                        <Drawer
+                            variant="permanent"
+                            anchor="right"
+                            sx={{
+                                width: 20,
+                                flexShrink: 0,
+                                [`& .MuiDrawer-paper`]: { width: '15%', boxSizing: 'border-box' },
+                            }}
+                        >
+                            <Toolbar />
+                            <Box sx={{ overflow: 'auto' }}>
+                                <List>
+                                    {getArticlesByTag(Student.shortName).map(article => {
+                                        return <ListItemButton component={Link} to={`/articles?article=${article.title}`}>{article.title}</ListItemButton >
+                                    })}
+                                </List>
+                            </Box>
+                        </Drawer>
                     </>
                     : <Alert severity="warning">
                         {name} does not attend Strixhaven

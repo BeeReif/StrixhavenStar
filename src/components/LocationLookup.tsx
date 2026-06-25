@@ -1,4 +1,4 @@
-import { Container, Grid2 as Grid, Typography, useMediaQuery } from "@mui/material";
+import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { getEmployeesByJob, getRegularsByLocation, } from "../assets/Students";
 import { Club,  Student } from "../assets/Models";
@@ -102,12 +102,12 @@ export function LocationLookup() {
         <Container maxWidth="xl">
             <Grid container spacing={3}>
                 <Grid size={12}>
-                    <Typography variant="h4" flexGrow={1}>
+                    <Typography variant="h4" sx={{flexGrow: 1}}>
                         {"Strixhaven Star"}
                     </Typography>
                 </Grid>
                     <Grid size={12}>
-                        <Typography variant="h5" flexGrow={1}>
+                        <Typography variant="h5" sx={{flexGrow: 1}}>
                             {"Locations"}
                         </Typography>
                     </Grid>

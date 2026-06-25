@@ -1,4 +1,4 @@
-import { Alert, Container, Grid2 as Grid, List, ListItem, ListItemText, Paper, Stack, Typography } from "@mui/material";
+import { Alert, Container, Grid, List, ListItem, ListItemText, Paper, Stack, Typography } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { getClubByShortName } from "../assets/Clubs";
 import { getMembersByClub } from "../assets/Students";
@@ -15,7 +15,7 @@ export function ClubDetails() {
             <Grid container spacing={3}>
                 {Club ? <>
                     <Grid size={12}>
-                        <Typography variant="h4" flexGrow={1}>
+                        <Typography variant="h4" sx={{flexGrow: 1}}>
                             {Club.name}
                         </Typography>
                     </Grid>

@@ -1,4 +1,4 @@
-import { Alert, Box, Card, CardContent, CardMedia, Container, Grid2 as Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
+import { Alert, Box, Card, CardContent, CardMedia, Container, Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
 import { getLocationsByCampus } from "../assets/Locations";
@@ -52,7 +52,7 @@ export function CampusDetails() {
             <Grid container spacing={3}>
                 {Campus ? <>
                     <Grid size={{ xs: 12, lg: 8 }}>
-                        <Grid container size={12} alignItems={"center"}>
+                        <Grid container size={12} sx={{alignItems: "center"}}>
                             <Grid size={{ xs: 10, md: "auto" }}>
                                 <Typography variant="h4" >
                                     {Campus.name}{Campus.subtitle ? `: College of ${Campus.subtitle}` : ""}
@@ -62,13 +62,11 @@ export function CampusDetails() {
                                 logo && Campus.name !== "Central" ?
 
                                     <Grid size={{ xs: 2 }}>
-                                        <Box
-                                            width={50}
-                                            height={50}
+                                         <Box
+                                            sx={{width: 50, height: 50, marginTop: 0}}
                                             component="img"
                                             src={logo}
                                             alt={Campus.name}
-                                            marginTop={0}
                                         />
                                     </Grid>
 

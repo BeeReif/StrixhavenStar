@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Container, Grid2 as Grid, TextField, Typography, useMediaQuery } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Container, Grid, TextField, Typography, useMediaQuery } from "@mui/material";
 import { DataGrid, GridColDef, GridPreProcessEditCellProps, useGridApiRef } from '@mui/x-data-grid';
 import { STUDENTS } from "../assets/Students";
 import { Club, Job, School, Student } from "../assets/Models";
@@ -109,13 +109,13 @@ export function StudentLookup() {
         <Container maxWidth="xl">
             <Grid container spacing={3}>
                 <Grid size={12}>
-                    <Typography variant="h4" flexGrow={1}>
+                    <Typography variant="h4" sx={{flexGrow: 1}}>
                         {"Strixhaven Star"}
                     </Typography>
                 </Grid>
                 <Grid container size={12}>
                     <Grid size={12}>
-                        <Typography variant="h5" flexGrow={1}>
+                        <Typography variant="h5" sx={{flexGrow: 1}}>
                             {"Student Search"}
                         </Typography>
                     </Grid>

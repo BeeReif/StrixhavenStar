@@ -1,4 +1,4 @@
-import { Alert, Container, Grid2 as Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
+import { Alert, Container, Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { getStudentsByClass } from "../assets/Students";
 import { getClassByShortName } from "../assets/Classes";
@@ -17,7 +17,7 @@ export function ClassDetails() {
             <Grid container spacing={3}>
                 {Class ? <>
                     <Grid size={12}>
-                        <Typography variant="h4" flexGrow={1}>
+                        <Typography variant="h4" sx={{flexGrow: 1}}>
                             {Class.name}
                         </Typography>
                     </Grid>

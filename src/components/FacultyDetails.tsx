@@ -1,4 +1,4 @@
-import { Alert, Container, List, ListItemText, Paper, Typography, Grid2 as Grid, ListItem, Card, CardContent, Box, CardMedia } from "@mui/material";
+import { Alert, Container, List, ListItemText, Paper, Typography, Grid, ListItem, Card, CardContent, Box, CardMedia } from "@mui/material";
 import { getMembersByClub } from "../assets/Students";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
@@ -28,23 +28,25 @@ export function FacultyDetails() {
                     <>
                         <Grid container size={12}>
                             <Grid size={"grow"}>
-                                <Grid container alignItems={"center"}>
+                                <Grid container sx={{ alignItems: "center" }}>
                                     <Grid size={{ xs: 10, sm: "auto" }}>
-                                        <Typography variant="h4" flexGrow={0} flexShrink={1}>
+                                        <Typography variant="h4" sx={{ flexGrow: 0, flexShrink: 1 }}>
                                             {Faculty?.name} ({Faculty.pronouns})
                                         </Typography>
                                     </Grid>
                                     {
                                         logo ?
-                                            <Grid size={{ xs: 2 }} container alignContent={"baseline"}>
+                                            <Grid size={{ xs: 2 }} container sx={{ alignContent: "baseline" }}>
                                                 <Box
-                                                    width={50}
-                                                    height={50}
+                                                    sx={{
+                                                        width: 50,
+                                                        height: 50,
+                                                        marginTop: 0,
+                                                        alignItems: "flex-start"
+                                                    }}
                                                     component="img"
                                                     src={logo}
                                                     alt={Faculty.name}
-                                                    marginTop={0}
-                                                    alignItems={'top'}
                                                 />
                                             </Grid>
                                             : null
@@ -110,7 +112,7 @@ export function FacultyDetails() {
                                                 <ListItemText primary="Other Notable Connections" secondary={Faculty.connections.map((connection, i) => {
                                                     return <><Link to={
                                                         getFacultyByShortName(connection) ?
-                                                        `/faculty/${connection}` : `/student/${connection}`}>
+                                                            `/faculty/${connection}` : `/student/${connection}`}>
                                                         {connection}
                                                     </Link>{i < Faculty.connections!.length - 1 ? ", " : ""}</>
                                                 })} />

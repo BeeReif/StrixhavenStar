@@ -1,4 +1,4 @@
-import { Alert, Card, CardMedia, Container, Grid2 as Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
+import { Alert, Card, CardMedia, Container, Grid, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
 import { getLocationByShortName } from "../assets/Locations";
@@ -23,10 +23,10 @@ export function LocationDetails() {
             <Grid container spacing={3}>
                 {Location ? <>
                     <Grid size={{ xs: 12, md: 8 }}>
-                        <Typography variant="h4" flexGrow={1}>
+                        <Typography variant="h4" sx={{flexGrow: 1}}>
                             {Location.name}
                         </Typography>
-                        <Typography variant="h5" flexGrow={1}>
+                        <Typography variant="h5" sx={{flexGrow: 1}}>
                             At <Link to={`/campus/${Location.campus}`}>{Location.campus}</Link> Campus
                         </Typography>
                         {

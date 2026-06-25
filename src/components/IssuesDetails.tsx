@@ -7,7 +7,7 @@ export function IssuesDetails() {
     const resp = useQuery({ queryKey: ["issues"], queryFn: () => { return getIssues(octokit) } })
     const issues = resp.data?.data
     return <>
-        <Typography paddingLeft={"16px"} variant="h5">
+        <Typography sx={{paddingLeft: "16px"}} variant="h5">
             You can help contribute to any of these by either sending things to me, editing files locally and uploading them to <a href="https://github.com/BeeReif/StrixhavenStar">GitHub</a>
         , or directly in your browser with <a href="https://github.dev/BeeReif/StrixhavenStar/blob/main/src/assets">GitHub Dev</a>
         </Typography>

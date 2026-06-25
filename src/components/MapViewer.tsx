@@ -19,7 +19,7 @@ export function MapViewer(props: MapViewerProps) {
 
     return <Dialog open={props.open} maxWidth="md" onClose={() => props.setOpen(false)}>
         <DialogTitle>
-            <Stack direction={"row"} alignItems={'center'}>
+            <Stack direction={"row"} sx={{alignItems: 'center'}}>
                 <Select
                     size="small"
                     value={map}
@@ -33,7 +33,7 @@ export function MapViewer(props: MapViewerProps) {
                     <MenuItem value={Quandrix}>Quandrix</MenuItem>
                     <MenuItem value={Silverquill}>Silverquill</MenuItem>
                     <MenuItem value={Witherbloom}>Witherbloom</MenuItem>
-                </Select> <Typography flexGrow={1}> &nbsp; Map</Typography>
+                </Select> <Typography sx={{flexGrow: 1}}> &nbsp; Map</Typography>
                 <IconButton onClick={() => props.setOpen(false)}><CloseIcon /></IconButton>
             </Stack>
         </DialogTitle>

@@ -1,4 +1,4 @@
-import { AppBar, Autocomplete, Button, Divider, TextField, Toolbar, Grid2 as Grid, useMediaQuery, IconButton, Menu, MenuItem} from "@mui/material";
+import { AppBar, Autocomplete, Button, Divider, TextField, Toolbar, Grid, useMediaQuery, IconButton, Menu, MenuItem} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from "react-router-dom";
 import { CLUBS, getClubByShortName } from "../assets/Clubs";
@@ -65,9 +65,9 @@ export function NavBar() {
     }
 
 
-    return <AppBar position="sticky">
+    return <AppBar position="sticky" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar sx={{ width: "100%" }}>
-            <Grid container size={12} flexGrow={1} alignItems={"center"}>
+            <Grid container size={12} sx={{flexGrow: 1, alignItems: "center"}}>
                 {isMobile ? <>
                     <Grid size={3}>
                         <IconButton onClick={handleClick}>
@@ -92,6 +92,7 @@ export function NavBar() {
                             <MenuItem onClick={handleClose} component={Link} to="/faculty">Faculty</MenuItem>
                             <MenuItem onClick={handleClose} component={Link} to="/location">Locations</MenuItem>
                             {/* <MenuItem onClick={handleClose} component={Link} to="/class">Classes</MenuItem> */}
+                            <MenuItem onClick={handleClose} component={Link} to="/articles">Articles</MenuItem>
                             <MenuItem onClick={handleClose} component={Link} to="/club">Clubs</MenuItem>
                             <MenuItem onClick={handleClose} component={Link} to="/TODO">TODO</MenuItem>
 
@@ -104,7 +105,7 @@ export function NavBar() {
                                 <img src={Strixhaven} height={50} />
                             </Button>
                         </Grid>
-                        <Grid container size={"grow"} justifyContent={"center"}>
+                        <Grid container size={"grow"} sx={{justifyContent: "center"}}>
                             <Divider orientation="vertical" flexItem variant='middle' />
                             <Button
                                 component={Link}
@@ -144,6 +145,12 @@ export function NavBar() {
                             <Divider orientation="vertical" flexItem variant='middle' />
                             <Button
                                 component={Link}
+                                to="/articles"
+                                color="inherit">Articles
+                            </Button>
+                            <Divider orientation="vertical" flexItem variant='middle' />
+                            <Button
+                                component={Link}
                                 to="/issues"
                                 color="inherit">todo
                             </Button>
@@ -153,7 +160,7 @@ export function NavBar() {
                             </IconButton>
                         </Grid>
                     </Grid>}
-                <Grid size={{ xs: 8, sm: 3 }} paddingRight={isMobile ? 0 : "5rem"}>
+                <Grid size={{ xs: 8, sm: 3 }} sx={{paddingRight: isMobile ? 0 : "5rem"}}>
                     <Autocomplete
                         size="small"
                         options={Options}

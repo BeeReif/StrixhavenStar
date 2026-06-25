@@ -75,3 +75,9 @@ export class Job {
         this.location = location;
     }
 }
+
+export interface Article {
+    title: string
+    tags: string[]
+    body: string
+}
