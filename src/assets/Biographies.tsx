@@ -808,5 +808,8 @@ export const BIOS = new Map<String, String>([
         `they have the opportunity to, and in particular have an interest in botany and agriculture that they love to share with the students who'll listen. They are a calm, `+
         `grounding figure in an environment that is rooted, yes, in community and togetherness, but is very much so playing into the two groupings of Witherbloom's discipline, `+
         `and they make a point to relate as much as they can with students who are still finding their way forward.`
-    ]
+    ],
+    [
+        "Arsene", `Gay`
+    ],
 ])
