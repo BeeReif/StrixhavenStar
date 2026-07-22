@@ -11,7 +11,7 @@ export function StarArticles() {
 
 
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-    const [open, setOpen] = useState(!isMobile)
+    const [open, setOpen] = useState(false)
 
     function scrollToArticle(title: string) {
         const article = document.getElementById(title)

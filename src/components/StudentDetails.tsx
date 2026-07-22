@@ -15,7 +15,7 @@ export function StudentDetails() {
 
     const Student = getStudentByShortName(name)
     const [logo, setLogo] = useState<string>()
-    const [open, setOpen] = useState(!isMobile)
+    const [open, setOpen] = useState(false)
 
     const articles = getArticlesByTag(Student?.shortName ?? "")
 
