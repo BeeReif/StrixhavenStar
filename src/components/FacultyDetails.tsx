@@ -98,23 +98,15 @@ export function FacultyDetails() {
                                 </Grid>
                                 <Grid size={{ xs: 12, lg: 6 }}>
                                     <List component={Paper}>
-                                        {Clubs.map((club) => {
-                                            return <ListItem>
-                                                <ListItemText primary={club.name} secondary={getMembersByClub(club).map((member, i) => {
-                                                    return <><Link to={`/student/${member.shortName}`}>
-                                                        {member.shortName}
-                                                    </Link>{i < getMembersByClub(club).length - 1 ? ", " : ""}</>
-                                                })} />
-                                            </ListItem>
-                                        })}
+                                        
                                         {Faculty.connections &&
                                             <ListItem>
-                                                <ListItemText primary="Other Notable Connections" secondary={Faculty.connections.map((connection, i) => {
+                                                <ListItemText primary="Notable Connections" secondary={Faculty.connections.map((connection) => {
                                                     return <><Link to={
-                                                        getFacultyByShortName(connection) ?
-                                                            `/faculty/${connection}` : `/student/${connection}`}>
-                                                        {connection}
-                                                    </Link>{i < Faculty.connections!.length - 1 ? ", " : ""}</>
+                                                        getFacultyByShortName(connection.name) ?
+                                                            `/faculty/${connection}` : `/student/${connection.name}`}>
+                                                        {connection.name}
+                                                    </Link> — {connection.relation}<br/></>
                                                 })} />
                                             </ListItem>
                                         }
@@ -130,6 +122,19 @@ export function FacultyDetails() {
                                     </Typography>
                                 </CardContent>
                             </Card>
+                        </Grid>
+                        <Grid size={12}>
+                            <Card>
+                            {Clubs.map((club) => {
+                                            return <ListItem>
+                                                <ListItemText primary={club.name} secondary={getMembersByClub(club).map((member, i) => {
+                                                    return <><Link to={`/student/${member.shortName}`}>
+                                                        {member.shortName}
+                                                    </Link>{i < getMembersByClub(club).length - 1 ? ", " : ""}</>
+                                                })} />
+                                            </ListItem>
+                                        })}
+                                        </Card>
                         </Grid>
                     </>
                     : <Alert severity="warning">

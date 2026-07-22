@@ -58,7 +58,7 @@ export const STUDENTS: Student[] = [
         roommates: ["Dusty"].sort(),
         freshRoomies: ["Dusty"].sort(),
         image: Cass,
-        connections: ["Zoey"]
+        connections: [{name: "Zoey", relation: "Complicated, haven't kissed YET"}]
     },
     {
         name: 'Dusty Oleastro',
@@ -71,7 +71,11 @@ export const STUDENTS: Student[] = [
         frequents: [PILLARDROP, CULTIVARIUM, FENS, BOG].sort((a,b) => {return a.name.localeCompare(b.name)}),
         roommates: ["Cass"].sort(),
         freshRoomies: ["Cass"],
-        image: Dusty
+        image: Dusty,
+        connections: [
+            {name: "Jasmine", relation: "Complicated, too scared"},
+            {name: "Sasha", relation: "Complicated, childhood friends, ate her out on a rock"},
+        ]
     },
     {
         name: 'Ramona',
@@ -111,7 +115,10 @@ export const STUDENTS: Student[] = [
         freshRoomies: ["Viv"].sort(),
         roommates: ["Jasmine"],
         image: Zoey,
-        connections: ["Lux", "Cass"]
+        connections: [
+            {name: "Lux", relation: "Sibling"},
+            {name: "Cass", relation: "Complicated"}
+        ]
     },
     {
         name: 'Ariel',
@@ -138,7 +145,7 @@ export const STUDENTS: Student[] = [
         roommates: ["Evander"],
         freshRoomies: ["Ramona"].sort(),
         image: Pyre,
-        connections: ["Glass"]
+        connections: [{name: "Glass", relation: "Brother"}]
     },
     {
         name: 'Glass',
@@ -151,7 +158,7 @@ export const STUDENTS: Student[] = [
         frequents: [],
         roommates: ["Cerise"],
         freshRoomies: ["Farren", "Evander"].sort(),
-        connections: ["Pyre"]
+        connections: [{name: "Pyre", relation: "Sister"}]
     },
     {
         name: 'Evander',
@@ -270,7 +277,7 @@ export const STUDENTS: Student[] = [
         roommates: ["Tomas", "Carrion"],
         freshRoomies: ["Petra", "Ciaran"].sort(),
         image: Thijs,
-        connections: ["Hennie"]
+        connections: [{name: "Hennie", relation: "Sister"}]
     },
     {
         name: 'Felix Moulin',
@@ -296,7 +303,7 @@ export const STUDENTS: Student[] = [
         roommates: ["Sasha"],
         freshRoomies: ["Ray", "Sasha"].sort(),
         image: Lux,
-        connections: ["Zoey"]
+        connections: [{name: "Zoey", relation: "Sister"}]
     },
     {
         name: 'Ace',
@@ -414,7 +421,7 @@ export const STUDENTS: Student[] = [
         freshRoomies: ["Worth", "Brilliance"].sort(),
         roommates: ["Hennie", "Elowen"],
         image: Grace,
-        connections: ["Worth"]
+        connections: [{name: "Worth", relation: "Boyfriend"}]
     },
     {
         name: 'Hendrika Vann Dalen',
@@ -428,7 +435,7 @@ export const STUDENTS: Student[] = [
         freshRoomies: ["Zephyr", "Shaw"].sort(),
         roommates: ["Grace", "Elowen"],
         image: Hennie,
-        connections: ["Thijs"]
+        connections: [{name: "Thijs", relation: "Brother"}]
     },
     {
         name: 'Jewel',
@@ -507,7 +514,7 @@ export const STUDENTS: Student[] = [
         roommates: ["Cyr", "Ciaran"],
         freshRoomies: ["Grace", "Brilliance"].sort(),
         image: Worth,
-        connections: ["Grace"]
+        connections: [{name: "Worth", relation: "Girlfriend"}]
     },
     {
         name: 'Zinnia',

@@ -1,11 +1,17 @@
-import { Box, Drawer, Grid, List, ListItemButton, Toolbar } from "@mui/material"
+import { BottomNavigation, BottomNavigationAction, Box, Drawer, Grid, List, ListItemButton, Paper, Toolbar, useMediaQuery } from "@mui/material"
 import { ARTICLES } from "../assets/Articles"
 import { ArticleCard } from "./ArticleCard"
 import { useSearchParams } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { theme } from "../Theme"
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 
 export function StarArticles() {
+
+
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+    const [open, setOpen] = useState(!isMobile)
 
     function scrollToArticle(title: string) {
         const article = document.getElementById(title)
@@ -32,12 +38,14 @@ export function StarArticles() {
 
     return <>
         <Drawer
-            variant="permanent"
-            anchor="right"
+            variant={isMobile ? "temporary": "permanent"}
+            open={open}
+            onClose={() => setOpen(false)}
+            anchor={isMobile ? "left" : "right"}
             sx={{
                 width: 20,
                 flexShrink: 0,
-                [`& .MuiDrawer-paper`]: { width: '15%', boxSizing: 'border-box' },
+                [`& .MuiDrawer-paper`]: { width: isMobile ? '45%' :'15%', boxSizing: 'border-box' },
             }}
         >
             <Toolbar />
@@ -49,14 +57,21 @@ export function StarArticles() {
                 </List>
             </Box>
         </Drawer>
-        <Grid container rowSpacing={50} sx={{ justifyContent: "center" }}>
+        <Grid container rowSpacing={25} sx={{ justifyContent: "center" }}>
             {
                 [...ARTICLES].reverse().map(article => {
-                    return <Grid size={8} key={article.title}>
+                    return <Grid size={isMobile ? 10 : 8} key={article.title}>
                         <ArticleCard title={article.title} body={article.body} tags={article.tags} />
                     </Grid>
                 })
             }
         </Grid>
+        {isMobile && 
+        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation>
+            <BottomNavigationAction icon={<NewspaperIcon/>} onClick={()=>setOpen(true)}/>
+        </BottomNavigation>
+        </Paper>
+        }
     </>
 }

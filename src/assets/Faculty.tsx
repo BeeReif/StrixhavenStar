@@ -34,7 +34,7 @@ export const FACULTY: Faculty[] = [
         school: "Lorehold",
         classes: [],
         image: Mara,
-        connections: ["Rathal"]
+        connections: [{name: "Rathal", relation: "Lover/Creation"}]
     },
     {
         name: "Rathal",
@@ -45,7 +45,7 @@ export const FACULTY: Faculty[] = [
         school: "Lorehold",
         classes: [],
         image: Rathal,
-        connections: ["Mara"]
+        connections: [{name: "Mara", relation: "Lover/Creator"}]
     },
     {
         name: "Gerard Maddox",
@@ -106,7 +106,7 @@ export const FACULTY: Faculty[] = [
         school: "Prismari",
         classes: [],
         image: Odette,
-        connections: ["Jianhua", "Rovina"]
+        connections: [{name: "Jianhua", relation: "?"}, {name: "Rovina", relation: "?"}]
     },
     {
         name: "Scoria",
@@ -137,7 +137,7 @@ export const FACULTY: Faculty[] = [
         school: "Quandrix",
         classes: [],
         image: Jianhua,
-        connections: ["Odette", "Rovina"]
+        connections: [{name: "Odette", relation: "?"}, {name: "Rovina", relation: "?"}]
     },
     {
         name: "Aleksander Larsen",
@@ -158,7 +158,7 @@ export const FACULTY: Faculty[] = [
         school: "Quandrix",
         classes: [],
         image: Isolde,
-        connections: ["Caspian"]
+        connections: [{name: "Caspian", relation: "Brother"}]
     },
     {
         name: "Elysian",
@@ -199,7 +199,7 @@ export const FACULTY: Faculty[] = [
         school: "Silverquill",
         classes: [],
         image: Caspian,
-        connections: ["Isolde"]
+        connections: [{name: "Isolde", relation: "Sister"}]
     },
     {
         name: "Emerson Blake",
@@ -220,7 +220,7 @@ export const FACULTY: Faculty[] = [
         school: "Witherbloom",
         classes: [],
         image: Arabella,
-        connections: ["Jade"]
+        connections: [{name: "Jade", relation: "?"}]
     },
     {
         name: "Genesis",
@@ -241,7 +241,7 @@ export const FACULTY: Faculty[] = [
         school: "Witherbloom",
         classes: [],
         image: Dottore,
-        connections: ["Jianhua", "Odette"]
+        connections: [{name: "Jianhua", relation: "?"}, {name: "Odette", relation: "?"}]
     },
     {
         name: "Eloise",
@@ -272,7 +272,7 @@ export const FACULTY: Faculty[] = [
         school: "Witherbloom",
         classes: [],
         image: Jade,
-        connections: ["Arabella"]
+        connections: [{name: "Arabella", relation: "?"}]
     },
 ].sort((a,b) => a.name.localeCompare(b.name)).sort((a,b) => a.school.localeCompare(b.school)) as Faculty[]
 

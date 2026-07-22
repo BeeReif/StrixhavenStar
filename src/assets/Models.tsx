@@ -7,7 +7,7 @@ pronouns: string
 shortName: string,
 frequents: Location[],
 image?: string
-connections?: string[]
+connections?: Connection[]
 }
 
 export interface Faculty extends Person {
@@ -80,4 +80,9 @@ export interface Article {
     title: string
     tags: string[]
     body: string
+}
+
+export interface Connection {
+    name: string,
+    relation: string
 }
