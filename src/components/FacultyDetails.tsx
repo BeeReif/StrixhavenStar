@@ -1,18 +1,25 @@
-import { Alert, Container, List, ListItemText, Paper, Typography, Grid, ListItem, Card, CardContent, Box, CardMedia } from "@mui/material";
+import { Alert, Container, List, ListItemText, Paper, Typography, Grid, ListItem, Card, CardContent, Box, CardMedia, Drawer, ListItemButton, Toolbar, useMediaQuery } from "@mui/material";
 import { getMembersByClub } from "../assets/Students";
 import { Link, useParams } from "react-router-dom";
 import { BIOS } from "../assets/Biographies";
 import { useEffect, useState } from "react";
 import { getFacultyByShortName } from "../assets/Faculty";
 import { getClubsByFaculty } from "../assets/Clubs";
+import { theme } from "../Theme";
+import { getArticlesByTag } from "../assets/Articles";
 
 export function FacultyDetails() {
 
     const { name = "" } = useParams()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
     const Faculty = getFacultyByShortName(name)
     const Clubs = getClubsByFaculty(Faculty!)
     const [logo, setLogo] = useState<string>()
+    const [open, setOpen] = useState(false)
+
+    
+    const articles = getArticlesByTag(Faculty?.shortName ?? "")
 
     useEffect(() => {
         const fetchImage = async () => {
@@ -98,15 +105,15 @@ export function FacultyDetails() {
                                 </Grid>
                                 <Grid size={{ xs: 12, lg: 6 }}>
                                     <List component={Paper}>
-                                        
+
                                         {Faculty.connections &&
                                             <ListItem>
                                                 <ListItemText primary="Notable Connections" secondary={Faculty.connections.map((connection) => {
                                                     return <><Link to={
                                                         getFacultyByShortName(connection.name) ?
-                                                            `/faculty/${connection}` : `/student/${connection.name}`}>
+                                                            `/faculty/${connection.name}` : `/student/${connection.name}`}>
                                                         {connection.name}
-                                                    </Link> — {connection.relation}<br/></>
+                                                    </Link> — {connection.relation}<br /></>
                                                 })} />
                                             </ListItem>
                                         }
@@ -125,17 +132,36 @@ export function FacultyDetails() {
                         </Grid>
                         <Grid size={12}>
                             <Card>
-                            {Clubs.map((club) => {
-                                            return <ListItem>
-                                                <ListItemText primary={club.name} secondary={getMembersByClub(club).map((member, i) => {
-                                                    return <><Link to={`/student/${member.shortName}`}>
-                                                        {member.shortName}
-                                                    </Link>{i < getMembersByClub(club).length - 1 ? ", " : ""}</>
-                                                })} />
-                                            </ListItem>
-                                        })}
-                                        </Card>
+                                {Clubs.map((club) => {
+                                    return <ListItem>
+                                        <ListItemText primary={club.name} secondary={getMembersByClub(club).map((member, i) => {
+                                            return <><Link to={`/student/${member.shortName}`}>
+                                                {member.shortName}
+                                            </Link>{i < getMembersByClub(club).length - 1 ? ", " : ""}</>
+                                        })} />
+                                    </ListItem>
+                                })}
+                            </Card>
                         </Grid>
+                        <Drawer
+                            variant={isMobile || articles.length < 1 ? "temporary" : "permanent"}
+                            anchor={isMobile ? "left" : "right"}
+                            open={open}
+                            onClose={() => setOpen(false)}
+                            sx={{
+                                flexShrink: 0,
+                                [`& .MuiDrawer-paper`]: { width: isMobile ? '45%' : '10%', boxSizing: 'border-box' },
+                            }}
+                        >
+                            <Toolbar />
+                            <Box sx={{ overflow: 'auto' }}>
+                                <List>
+                                    {articles.map(article => {
+                                        return <ListItemButton component={Link} to={`/articles?article=${article.title}`}>{article.title}</ListItemButton >
+                                    })}
+                                </List>
+                            </Box>
+                        </Drawer>
                     </>
                     : <Alert severity="warning">
                         {name} does not work at Strixhaven
